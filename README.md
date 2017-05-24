@@ -6,6 +6,21 @@ This project is an informative webpage that allows the users to use it as a blog
 
 Cardinal uses Grails and React for the Backend and Frontend.
 
+### Install Grails
+
+To install grails please follow this instructions:
+
+- https://grails.org/download.html
+
+Currently we are using this version:
+
+```
+grails -version
+| Grails Version: 3.2.9
+| Groovy Version: 2.4.10
+| JVM Version: 1.8.0_131
+```
+
 ## Run Cardinal
 
 To start using Cardinal use the following commands.
