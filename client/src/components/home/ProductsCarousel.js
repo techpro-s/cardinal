@@ -1,9 +1,9 @@
 import React from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 
-import drone from '../images/drone.png';
+import drone from '../../images/drone.png';
 
-function CardinalCarousel() {
+function ProductsCarousel() {
     return(
         <Carousel>
             <Carousel.Item>
@@ -31,4 +31,4 @@ function CardinalCarousel() {
     );
 }
 
-export default CardinalCarousel;
+export default ProductsCarousel;

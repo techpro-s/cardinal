@@ -1,11 +1,15 @@
 import React from 'react';
+import { Grid } from 'react-bootstrap';
 
 function CardinalFooter() {
     return(
-        <div className="footer-bottom">
-            <div className="container">
-                <p className="text-muted">This is a footer</p>
-            </div>
+        <div>
+            <hr />
+            <Grid>
+                <footer>
+                    <p>Copyright © 2017 - Inbright</p>
+                </footer>
+            </Grid>
         </div>
     );
 }
