@@ -31,6 +31,12 @@ json {
     	version plugin.version
     }
 	messages {
-		greeting g.message(code:'default.home.greeting')
+		navbar {
+			kit g.message(code:'default.home.navbar.kit')
+			platform g.message(code:'default.home.navbar.platform')
+			ecosystem g.message(code:'default.home.navbar.ecosystem')
+			contact g.message(code:'default.home.navbar.contact')
+			blog g.message(code:'default.home.navbar.blog')
+		}
 	}
 }

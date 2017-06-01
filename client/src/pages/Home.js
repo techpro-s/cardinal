@@ -13,7 +13,6 @@ class Home extends Component{
     constructor() {
       super();
       this.state = {
-        serverInfo: {},
         clientInfo: {
           version: CLIENT_VERSION,
           react: REACT_VERSION
@@ -26,20 +25,21 @@ class Home extends Component{
         const params = new URLSearchParams(search);
         const lang = params.get('lang'); // bar
         var query = lang != null ? "?lang=" + lang : "";
-        fetch(SERVER_URL + '/application' + query)
+        fetch(SERVER_URL + 'application' + query)
           .then(r => r.json())
           .then(json => this.setState({serverInfo: json}))
           .catch(error => console.error('Error connecting to server: ' + error));
 
     }
 
-
     render() {
-        console.log(this.state.serverInfo.messages);
-
+        if(!this.state.serverInfo){
+            return <div></div>
+        }
+        console.log(this.state.serverInfo.messages.navbar);
         return(
             <div>
-                <CardinalNav />
+                <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <ProductsCarousel />
                 <InfoGrid />
                 <br/>
