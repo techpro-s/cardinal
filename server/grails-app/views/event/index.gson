@@ -1,0 +1,8 @@
+import app.Event
+
+model {
+	Iterable<Event> eventList
+}
+
+json tmpl.event(eventList ?: [])
+

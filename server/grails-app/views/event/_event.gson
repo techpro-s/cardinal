@@ -1,0 +1,7 @@
+import app.Event
+
+model {
+	Event event
+}
+
+json g.render(event)
