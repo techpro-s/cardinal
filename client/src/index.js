@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Home from './pages/Home';
+/*import App from './App';
 import './css/App.css';
 import './css/grails.css';
-import './css/main.css';
+import './css/main.css';*/
 
 ReactDOM.render(
-  <App />,
+  //<App />,
+  <Home />,
   document.getElementById('root')
 );
