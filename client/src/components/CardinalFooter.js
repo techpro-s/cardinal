@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Grid } from 'react-bootstrap';
 
-function CardinalFooter() {
-    return(
-        <div>
-            <hr />
-            <Grid>
-                <footer>
-                    <p>Copyright © 2017 - Inbright</p>
-                </footer>
-            </Grid>
-        </div>
-    );
+class CardinalFooter extends Component {
+    render(){
+        return(
+            <div>
+                <hr />
+                <Grid>
+                    <footer>
+                        <p>{this.props.messages}</p>
+                    </footer>
+                </Grid>
+            </div>
+        );
+    }
 }
 
 export default CardinalFooter;
