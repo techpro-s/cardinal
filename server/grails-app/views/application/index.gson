@@ -38,5 +38,29 @@ json {
 			contact g.message(code:'default.home.navbar.contact')
 			blog g.message(code:'default.home.navbar.blog')
 		}
+		carousel {
+			kit_title g.message(code:'default.home.carousel.title.kit')
+			platform_title g.message(code:'default.home.carousel.title.platform')
+			ecosystem_title g.message(code:'default.home.carousel.title.ecosystem')
+			kit_message g.message(code:'default.home.carousel.message.kit')
+			platform_message g.message(code:'default.home.carousel.message.platform')
+			ecosystem_message g.message(code:'default.home.carousel.message.ecosystem')
+
+		}
+		infogrid {
+			drone_title g.message(code:'default.home.infogrid.title.drone')
+			platform_title g.message(code:'default.home.infogrid.title.platform')
+			ecosystem_title g.message(code:'default.home.infogrid.title.ecosystem')
+			drone_message g.message(code:'default.home.infogrid.message.drone')
+			platform_message g.message(code:'default.home.infogrid.message.platform')
+			ecosystem_message g.message(code:'default.home.infogrid.message.ecosystem')
+		}
+		jumbotron {
+			message g.message(code:'default.home.jumbotron.message')
+		}
+		trust {
+			info g.message(code:'default.home.trustinfo')
+		}
+		copyright g.message(code:'default.home.copyright')
 	}
 }

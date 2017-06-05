@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class CardinalNav extends Component {
-
     render(){
         return(
             <Navbar>

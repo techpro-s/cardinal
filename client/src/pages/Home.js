@@ -40,13 +40,13 @@ class Home extends Component{
         return(
             <div>
                 <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
-                <ProductsCarousel />
-                <InfoGrid />
+                <ProductsCarousel messages={this.state.serverInfo.messages.carousel}/>
+                <InfoGrid messages={this.state.serverInfo.messages.infogrid}/>
                 <br/>
-                <CardinalInfo />
-                <TrustedCompanies />
+                <CardinalInfo messages={this.state.serverInfo.messages.jumbotron}/>
+                <TrustedCompanies messages={this.state.serverInfo.messages.trust}/>
                 <br/><br/>
-                <CardinalFooter />
+                <CardinalFooter messages={this.state.serverInfo.messages.copyright}/>
             </div>
         );
     }
