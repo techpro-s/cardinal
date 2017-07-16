@@ -10,7 +10,7 @@ class Challenge {
     Challenge parent
 
     static hasMany = [challenges: Challenge,sponsores: Sponsor]
-   
+
     static constraints = {
         parent nullable: true
         events validator: { val, obj ->
