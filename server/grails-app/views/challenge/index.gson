@@ -1,0 +1,8 @@
+import app.Challenge
+
+model {
+	Iterable<Challenge> challengeList
+}
+
+json tmpl.challenge(challengeList ?: [])
+

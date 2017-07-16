@@ -1,0 +1,7 @@
+import app.Challenge
+
+model {
+	Challenge challenge
+}
+
+json g.render(challenge)
