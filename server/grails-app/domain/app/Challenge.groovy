@@ -1,21 +1,22 @@
 package app
 
-class Event {
+class Challenge {
     String title
     String description
     Date startDate
     Date endDate
     boolean enable =false
     SupportedLang lang
-    Event parent
+    Challenge parent
 
-    static hasMany = [events: Event]
+    static hasMany = [challenges: Challenge,sponsores: Sponsor]
+   
     static constraints = {
         parent nullable: true
         events validator: { val, obj ->
             def retval = true
             if (obj?.parent) {
-                retval = 'event.validator.childnochild.error'
+                retval = 'challenge.validator.childnochild.error'
             }
             return retval
         }
