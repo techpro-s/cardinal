@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 
-import drone from '../../images/drone.png';
+import drone from '../../images/carousel.png';
 
 class ProductsCarousel extends Component {
     render(){

@@ -54,9 +54,12 @@ json {
 			drone_message g.message(code:'default.home.infogrid.message.drone')
 			platform_message g.message(code:'default.home.infogrid.message.platform')
 			ecosystem_message g.message(code:'default.home.infogrid.message.ecosystem')
+			infoGridMain g.message(code:'default.home.infogrid.message.infoGridMain')
 		}
 		jumbotron {
 			message g.message(code:'default.home.jumbotron.message')
+			p1 g.message(code:'default.home.jumbotron.message.p1')
+			list  g.message(code:'default.home.jumbotron.message.list')
 		}
 		trust {
 			info g.message(code:'default.home.trustinfo')

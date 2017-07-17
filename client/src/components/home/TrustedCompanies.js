@@ -12,7 +12,7 @@ import manos from '../../images/manos.svg';
 class TrustedCompanies extends Component {
     render(){
         return (
-            <Grid className="text-center">
+            <Grid className="text-center gray-style">
                 <h2>{this.props.messages.info}</h2>
                 <Row >
                     <Col xs={6} md={4}><Image className="center-block" src={conafor} responsive/></Col>

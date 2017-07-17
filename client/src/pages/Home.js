@@ -41,7 +41,7 @@ class Home extends Component{
             <div>
                 <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <ProductsCarousel messages={this.state.serverInfo.messages.carousel}/>
-                <InfoGrid messages={this.state.serverInfo.messages.infogrid}/>
+                <InfoGrid messages={this.state.serverInfo.messages.infogrid} style={{background:"#171717"}}/>
                 <br/>
                 <CardinalInfo messages={this.state.serverInfo.messages.jumbotron}/>
                 <TrustedCompanies messages={this.state.serverInfo.messages.trust}/>
