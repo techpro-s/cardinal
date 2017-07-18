@@ -45,6 +45,12 @@
     vertical-align: top;
     padding-top: 0;
 }
+.footer-logo > a > img {
+    display: block;
+    width: 157px;
+    vertical-align: top;
+    padding-top: 0;
+}
 @media (min-width: 768px) {
     .navbar > .container .navbar-brand,
     .navbar > .container-fluid .navbar-brand {
@@ -53,6 +59,7 @@
 }
 .dark-style {
     color: #fff;
+    background: #171717;
 }
 .gray-style {
     background: #eeeff1;
@@ -72,4 +79,20 @@
     margin-top: 50px;
     font-weight: 400;
     color: #171717;
+}
+.trust{
+    margin-top:50px;
+    height: 140px;
+}
+.footer ul>li>a{
+    color: #eeeff1;
+    text-decoration: none;
+}
+.footer ul>li>a:focus,a:hover{
+    color: #dddddd;
+    text-decoration: none;
+}
+.footer > ul{
+    list-style-type: none;
+    padding-left: 5px;
 }

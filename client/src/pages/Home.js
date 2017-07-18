@@ -45,8 +45,8 @@ class Home extends Component{
                 <br/>
                 <CardinalInfo messages={this.state.serverInfo.messages.jumbotron}/>
                 <TrustedCompanies messages={this.state.serverInfo.messages.trust}/>
-                <br/><br/>
-                <CardinalFooter messages={this.state.serverInfo.messages.copyright}/>
+
+                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
         );
     }
