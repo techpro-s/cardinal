@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Grid,Row,Col,Image} from 'react-bootstrap';
 import imageinfo from '../../images/OurSolution.png';
-
 class CardinalInfo extends Component {
     render(){
         return (
             <Grid className="text-center">
+                <Row className="text-center" style={{height: "100px ",paddingTop:"100px"}}/>
                 <Row>
                     <Col xs={12} md={7}>
                         <Image className="center-block" src={imageinfo} responsive/>
@@ -17,8 +17,8 @@ class CardinalInfo extends Component {
                     </Col>
                 </Row>
                 <Row className="text-center" style={{height: "100px ",paddingTop:"100px"}}/>
-
             </Grid>
+
         );
     }
 }

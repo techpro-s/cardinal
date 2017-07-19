@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Grid ,Col,Row} from 'react-bootstrap';
 import cardinalLogo from '../images/logo.png';
-import FontAwesome from 'react-fontawesome';
 class CardinalFooter extends Component {
     render(){
         return(
@@ -36,14 +35,13 @@ class CardinalFooter extends Component {
 
                                 <Col xs={2} md={4}/>
                                 <Col xs={4} md={2}>
-                                    <Row><b>{this.props.messages.contact}</b></Row>
-                                    <Row>
-                                        <FontAwesome name="fa-facebook-official"/>
-                                        <FontAwesome name="rocket"/>
-                                        <i className="fa fa-facebook-official" aria-hidden="true"/>
-                                        <i className="fa fa-youtube" aria-hidden="true"/>
-                                        <i className="fa fa-linkedin" aria-hidden="true"/>
-                                        <i className="fa fa-twitter" aria-hidden="true"/>
+                                    <Row className="text-center"><b>{this.props.messages.contact}</b></Row>
+                                    <br/>
+                                    <Row className="text-center">
+                                            <i className="fa fa-facebook fa-lg icon-bar" aria-hidden="true"/>
+                                        <i className="fa fa-youtube fa-lg icon-bar" aria-hidden="true"/>
+                                         <i className="fa fa-linkedin fa-lg icon-bar" aria-hidden="true"/>
+                                       <i className="fa fa-twitter fa-lg icon-bar" aria-hidden="true"/>
                                     </Row>
                                 </Col>
                             </Row>

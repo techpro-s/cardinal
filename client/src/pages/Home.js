@@ -3,10 +3,13 @@ import CardinalNav from '../components/CardinalNav';
 import CardinalFooter from '../components/CardinalFooter';
 import ProductsCarousel from '../components/home/ProductsCarousel';
 import CardinalInfo from '../components/home/CardinalInfo';
+import MainBanner from '../components/home/MainBanner';
+
 import InfoGrid from '../components/home/InfoGrid';
 import TrustedCompanies from '../components/home/TrustedCompanies';
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from '../config';
 import 'whatwg-fetch';
+
 
 class Home extends Component{
 
@@ -42,8 +45,9 @@ class Home extends Component{
                 <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <ProductsCarousel messages={this.state.serverInfo.messages.carousel}/>
                 <InfoGrid messages={this.state.serverInfo.messages.infogrid} style={{background:"#171717"}}/>
-                <br/>
+
                 <CardinalInfo messages={this.state.serverInfo.messages.jumbotron}/>
+<MainBanner/>
                 <TrustedCompanies messages={this.state.serverInfo.messages.trust}/>
 
                 <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
