@@ -6,6 +6,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './css/App.css';
 import './css/grails.css';
 import './css/main.css';*/
+import './css/cardinal.css';
+
 
 ReactDOM.render((
   //<App />,

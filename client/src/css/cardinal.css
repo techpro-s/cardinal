@@ -1,0 +1,102 @@
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 0 solid transparent;
+    border-radius: 0;
+}
+.navbar-default {
+    background: -webkit-linear-gradient(#171717, #171717 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#171717 , #171717); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#171717 , #171717 ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#171717 , #171717 ); /* Standard syntax */
+    opacity: 0.8;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #186aa5;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #186aa5;
+    background-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.navbar-brand > img {
+    display: block;
+    width: 157px;
+    vertical-align: top;
+    padding-top: 0;
+}
+.footer-logo > a > img {
+    display: block;
+    width: 157px;
+    vertical-align: top;
+    padding-top: 0;
+}
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: -15px;
+    }
+}
+.dark-style {
+    color: #fff;
+    background: #171717;
+}
+.gray-style {
+    background: #eeeff1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.left-text {
+    text-align: left;
+
+
+}
+.left-text-our {
+    text-align: left;
+    line-height: 1.4;
+    font-size: 20px;
+    margin-top: 50px;
+    font-weight: 400;
+    color: #171717;
+}
+.trust{
+    margin-top:50px;
+    height: 140px;
+}
+.footer ul>li>a{
+    color: #eeeff1;
+    text-decoration: none;
+}
+.footer ul>li>a:focus,a:hover{
+    color: #dddddd;
+    text-decoration: none;
+}
+.footer > ul{
+    list-style-type: none;
+    padding-left: 5px;
+}
+.icon-bar{
+    padding-left: 7px;
+    padding-right: 25px;
+}
