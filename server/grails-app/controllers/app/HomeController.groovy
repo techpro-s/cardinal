@@ -6,9 +6,8 @@ import grails.converters.*
 
 class HomeController {
 	static responseFormats = ['json', 'xml']
-	
-    def index() { }
-    def platform(){
 
-    }
+    def index() { }
+	  def kit() { }
+    def platform(){ }
 }

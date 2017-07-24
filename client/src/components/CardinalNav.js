@@ -9,11 +9,11 @@ class CardinalNav extends Component {
             <Navbar>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <a href="#"><img src={cardinalLogo} class="img-responsive" alt="cardinal" /></a>
+                    <a href="/"><img src={cardinalLogo} class="img-responsive" alt="cardinal" /></a>
                 </Navbar.Brand>
             </Navbar.Header>
             <Nav pullRight>
-                <NavItem eventKey={1} href="#">{this.props.messages.kit}</NavItem>
+                <NavItem eventKey={1} href="/kit">{this.props.messages.kit}</NavItem>
                 <NavItem eventKey={2} href="#">{this.props.messages.platform}</NavItem>
                 <NavItem eventKey={3} href="#">{this.props.messages.ecosystem}</NavItem>
                 <NavItem eventKey={4} href="#">{this.props.messages.contact}</NavItem>
