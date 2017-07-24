@@ -8,5 +8,6 @@ class HomeController {
 	static responseFormats = ['json', 'xml']
 
     def index() { }
-	def kit() { }
+	  def kit() { }
+    def platform(){ }
 }

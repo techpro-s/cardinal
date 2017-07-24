@@ -1,0 +1,58 @@
+
+json {
+    messages {
+        main{
+            title g.message(code: 'default.platform.main.title')
+            text1 g.message(code: 'default.platform.main.text.1')
+            text2 g.message(code: 'default.platform.main.text.2')
+            text3 g.message(code: 'default.platform.main.text.3')
+            text4 g.message(code: 'default.platform.main.text.4')
+            text5 g.message(code: 'default.platform.main.text.5')
+                    }
+        courseOverview{
+            title g.message(code: 'default.platform.co.title')
+            subtitle1 g.message(code: 'default.platform.co.subtitle1')
+            text1 g.message(code: 'default.platform.co.text1')
+            subtitle2 g.message(code: 'default.platform.co.subtitle2')
+            text2 g.message(code: 'default.platform.co.text2')
+            subtitle3 g.message(code: 'default.platform.co.subtitle3')
+            text3 g.message(code: 'default.platform.co.text3')
+        }
+        platformFeatures{
+            title g.message(code: 'default.platform.pf.title')
+            videos g.message(code: 'default.platform.pf.videos')
+            videostext g.message(code: 'default.platform.pf.videostext')
+            forum g.message(code: 'default.platform.pf.forum')
+            forumtext g.message(code: 'default.platform.pf.forumtext')
+            test g.message(code: 'default.platform.pf.test')
+            testtext g.message(code: 'default.platform.pf.testtext')
+            teacher g.message(code: 'default.platform.pf.teacher')
+            teachertext g.message(code: 'default.platform.pf.teachertext')
+        }
+        navbar {
+            kit g.message(code: 'default.home.navbar.kit')
+            platform g.message(code: 'default.home.navbar.platform')
+            ecosystem g.message(code: 'default.home.navbar.ecosystem')
+            contact g.message(code: 'default.home.navbar.contact')
+            blog g.message(code: 'default.home.navbar.blog')
+        }
+        footer {
+            copyright g.message(code: 'default.home.copyright')
+            company g.message(code: 'default.home.footer.company')
+            about g.message(code: 'default.home.footer.company.about')
+            press g.message(code: 'default.home.footer.company.press')
+            blog g.message(code: 'default.home.footer.company.Blog')
+            software g.message(code: 'default.home.footer.software')
+            kit g.message(code: 'default.home.footer.software.kit')
+            platform g.message(code: 'default.home.footer.software.platform')
+            ecosystem g.message(code: 'default.home.footer.software.Ecosystem')
+            social g.message(code: 'default.home.footer.social')
+            social1 g.message(code: 'default.home.footer.social.1')
+            social2 g.message(code: 'default.home.footer.social.2')
+            social3 g.message(code: 'default.home.footer.social.3')
+            contact g.message(code: 'default.home.footer.contact')
+            policy g.message(code: 'default.home.footer.policy')
+        }
+    }
+
+}

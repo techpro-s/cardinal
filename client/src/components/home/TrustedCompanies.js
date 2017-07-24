@@ -13,7 +13,7 @@ class TrustedCompanies extends Component {
     render(){
         return (
             <Grid className="text-center gray-style">
-                <Row className="text-center gray-style" style={{height: "100px ",paddingTop:"100px"}}/>
+                <Row className="text-center gray-style" style={{height: "50px ",paddingTop:"50px"}}/>
                 <h2>{this.props.messages.info} <b>{this.props.messages.us}</b></h2>
                 <Row >
                     <Col xs={6} md={3}><Image className="center-block trust" src={ceti} responsive/></Col>
