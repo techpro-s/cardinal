@@ -100,3 +100,64 @@
     padding-left: 7px;
     padding-right: 25px;
 }
+.gridNoMargin {
+    width: 100%;
+    padding: 0;
+}
+
+.landing-col {
+    padding: 0;
+    position: relative;
+}
+
+.nolanding-col {
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.landing-col img {
+
+    width: 100%;
+}
+@font-face {
+    font-family: OpenSansRegular;
+    src: url(fonts/OpenSans/OpenSans-Regular.ttf);
+}
+.h4Title{
+   font-family: Montserrat Alternates Semi Bold, Serif ;
+    color: #171717;
+    font-size: larger;
+    font-weight: 500;
+}
+.h4TitleBlue{
+    font-family: Montserrat Alternates Semi Bold, Serif ;
+    color: #186aa5;
+    font-size: large;
+    font-weight: 500;
+}
+.pText{
+    color: #171717;
+    font-size: medium;
+    padding: 0 10%;
+}
+.h4TitleWhite{
+    font-family: Montserrat Alternates Semi Bold, Serif ;
+    color: #eeeff1;
+    font-size: larger;
+    font-weight: 500;
+}
+.pTextWhite{
+    color: #eeeff1;
+    font-size: medium;
+    padding: 0 ;
+}
+.COverview{
+    background: #186aa5;
+    color: #eeeff1;
+}
+.bg-White{
+    background: #eeeff1;
+    width: 168px;
+    height: 168px;
+}
