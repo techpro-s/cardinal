@@ -103,6 +103,12 @@
 .gridNoMargin {
     width: 100%;
     padding: 0;
+    min-height: 580px;
+}
+.gridNoMarginNoHeight {
+    width: 100%;
+    padding: 0;
+
 }
 
 .landing-col {
@@ -161,7 +167,14 @@
     width: 168px;
     height: 168px;
 }
-
 .carousel-control.left, .carousel-control.right {
     background-image: none
+}
+.image-no-block{
+     display: initial;
+
+}
+.row {
+     margin-right: 0;
+     margin-left: 0;
 }

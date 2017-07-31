@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Kit from './pages/Kit';
 import Platform from './pages/Platform';
 import Ecosystem from './pages/Ecosystem';
+import Contact from './pages/Contact';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 /*import App from './App';
 import './css/App.css';
@@ -20,6 +21,7 @@ ReactDOM.render((
             <Route exact path="/kit" component={Kit}/>
             <Route exact path="/platform" component={Platform}/>
             <Route exact path="/ecosystem" component={Ecosystem}/>
+            <Route exact path="/contact" component={Contact}/>
         </Switch>
     </BrowserRouter>)
 ,document.getElementById('root')
