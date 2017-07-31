@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import CardinalNav from '../components/CardinalNav';
 import CardinalFooter from '../components/CardinalFooter';
 
-import MainKit from '../components/kit/MainKit';
-import InfoGrid from '../components/kit/InfoGrid';
-import PerfectFor from '../components/kit/PerfectFor';
-import Languages from '../components/kit/Languages';
+import MainEcosystem from '../components/ecosystem/MainEcosystem';
+import HowItWorks from '../components/ecosystem/HowItWorks';
+import Challenges from '../components/ecosystem/Challenges';
+import InfoGrid from '../components/ecosystem/InfoGrid';
+import Events from '../components/ecosystem/Events';
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from '../config';
 import 'whatwg-fetch';
 
 
-class Kit extends Component{
+class Ecosystem extends Component{
 
     constructor() {
       super();
@@ -27,7 +28,7 @@ class Kit extends Component{
         const params = new URLSearchParams(search);
         const lang = params.get('lang'); // bar
         var query = lang != null ? "?lang=" + lang : "";
-        fetch(SERVER_URL + 'home/kit' + query)
+        fetch(SERVER_URL + 'home/ecosystem' + query)
           .then(r => r.json())
           .then(json => this.setState({serverInfo: json}))
           .catch(error => console.error('Error connecting to server: ' + error));
@@ -42,14 +43,15 @@ class Kit extends Component{
         return(
             <div>
                 <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
-                <MainKit messages={this.state.serverInfo.messages.gridMain}/>
+                <MainEcosystem messages={this.state.serverInfo.messages.gridMain}/>
+                <HowItWorks messages={this.state.serverInfo.messages.howItWorks}/>
+                <Challenges messages={this.state.serverInfo.messages.challenges}/>
                 <InfoGrid messages={this.state.serverInfo.messages.infoGrid}/>
-                <PerfectFor messages={this.state.serverInfo.messages.perfectFor}/>
-                <Languages messages={this.state.serverInfo.messages.languages}/>
+                <Events messages={this.state.serverInfo.messages.events}/>
                 <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
         );
     }
 }
 
-export default Kit;
+export default Ecosystem;

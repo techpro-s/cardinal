@@ -15,7 +15,7 @@ class CardinalNav extends Component {
             <Nav pullRight>
                 <NavItem eventKey={1} href="/kit">{this.props.messages.kit}</NavItem>
                 <NavItem eventKey={2} href="/platform">{this.props.messages.platform}</NavItem>
-                <NavItem eventKey={3} href="#">{this.props.messages.ecosystem}</NavItem>
+                <NavItem eventKey={3} href="/ecosystem">{this.props.messages.ecosystem}</NavItem>
                 <NavItem eventKey={4} href="#">{this.props.messages.contact}</NavItem>
                 <NavItem eventKey={5} href="#">{this.props.messages.blog}</NavItem>
             </Nav>

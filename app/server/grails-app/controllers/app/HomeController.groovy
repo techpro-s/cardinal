@@ -10,4 +10,5 @@ class HomeController {
     def index() { }
 	def kit() { }
     def platform(){ }
+	def ecosystem(){ }
 }

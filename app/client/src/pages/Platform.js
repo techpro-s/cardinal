@@ -31,7 +31,7 @@ class Platform extends Component{
         if(!this.state.serverInfo){
             return <div></div>
         }
-        console.log(this.state.serverInfo.messages.navbar);
+        console.log(this.state.serverInfo.messages);
         return(
             <div>
                 <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
