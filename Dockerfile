@@ -1,14 +1,16 @@
-FROM mozart/grails:3
+FROM grails-base-centos
 MAINTAINER Roberto Saldana <rob.salda@gmail.com>
 
 # Copy App files
-COPY . /app
-
-# Run Grails dependency-report command to pre-download dependencies but not 
-# create unnecessary build files or artifacts.
-# RUN grails dependency-report
+COPY app /app
 WORKDIR /app
-# Set Default Behavior
-ENTRYPOINT ["./gradlew"]
-#CMD ["run"]
-CMD ["bootRun", "-parallel"]
+
+# Get app dependencies
+RUN ./gradlew dependencies
+RUN ./gradlew build
+
+COPY start-app.sh /app
+RUN chmod +x start-app.sh
+
+# Add start command
+CMD ["./start-app.sh"]
