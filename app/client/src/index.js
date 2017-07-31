@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Home from './pages/Home';
 import Kit from './pages/Kit';
 import Platform from './pages/Platform';
+import Contact from './pages/Contact';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 /*import App from './App';
 import './css/App.css';
@@ -18,6 +19,7 @@ ReactDOM.render((
             <Route exact path="/" component={Home}/>
             <Route exact path="/kit" component={Kit}/>
             <Route exact path="/platform" component={Platform}/>
+            <Route exact path="/contact" component={Contact}/>
         </Switch>
     </BrowserRouter>)
 ,document.getElementById('root')
