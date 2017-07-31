@@ -22,7 +22,7 @@ class PlatformFeatures extends Component {
                 <Row className="text-center " style={{height: "8% ", paddingTop: "8%"}}/>
 
                 <Row className="text-center">
-                        <Col md={6} xs={12} lg={3}>
+                        <Col md={6} xs={12} lg={6}>
 
                             <Thumbnail src={video} thumbnail responsive>
 
@@ -33,7 +33,7 @@ class PlatformFeatures extends Component {
                             </Thumbnail>
 
                         </Col>
-                        <Col md={6} xs={12} lg={3}>
+                        <Col md={6} xs={12} lg={6}>
 
                                 <Thumbnail src={forum} thumbnail responsive>
 
@@ -46,7 +46,7 @@ class PlatformFeatures extends Component {
 
                     </Row>
                 <Row className="text-center">
-                    <Col md={6} xs={12} lg={3}>
+                    <Col md={6} xs={12} lg={6}>
                                                     <Thumbnail src={test} thumbnail responsive>
 
 
@@ -56,7 +56,7 @@ class PlatformFeatures extends Component {
 
 
                     </Col>
-                    <Col md={6} xs={12} lg={3}>
+                    <Col md={6} xs={12} lg={6}>
 
                             <Thumbnail src={teacher} thumbnail responsive>
 

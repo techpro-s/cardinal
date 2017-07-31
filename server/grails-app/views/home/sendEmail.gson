@@ -1,0 +1,8 @@
+model{
+    String user
+}
+json {
+    messages {
+        success g.message(code: 'default.contact.email.success', args:[user])
+    }
+}

@@ -11,4 +11,11 @@ class HomeController {
     def platform(){
 
     }
+    def contact(){}
+    def sendEmail(){
+        def email=request.JSON?.email
+        def name=request.JSON?.name
+        def message=request.JSON?.message
+        [user:name]
+    }
 }

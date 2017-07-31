@@ -4,7 +4,7 @@ import banner from '../../images/banner_2.png'
 class MainBanner extends Component {
     render(){
         return (
-<Grid className="gridNoMargin">
+<Grid className="gridNoMarginNoHeight">
     <Image src={banner} responsive/>
 
 </Grid>
