@@ -1,3 +1,4 @@
 .gradle/
 .idea/
 cardinal.iml
+*/.DS_Store
