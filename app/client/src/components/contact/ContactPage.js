@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {Image, Grid, Row, Col} from 'react-bootstrap';
 import ContactForm from './ContactForm'
 
-import back from '../../../../../client/src/images/contact/banner-02.png';
-import drone from '../../../../../client/src/images/contact/dron-02.png';;
-import slogan from '../../../../../client/src/images/contact/slogan-02.png';
+import back from '../../images/contact/banner-02.png';
+import drone from '../../images/contact/dron-02.png';;
+import slogan from '../../images/contact/slogan-02.png';
 
 class ContactPage extends Component {
     render() {

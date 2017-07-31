@@ -10,7 +10,7 @@ import salle from '../../images/trust/universidadlasalle.png';
 class InfoGrid extends Component {
     render(){
         return(
-            <Grid className="gridNoMargin">
+            <Grid>
                 <Row>
                     <Col md={6} xs={12} lg={6}>
                         <Row className="text-center" style={{paddingTop:"5%"}}>

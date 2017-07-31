@@ -6,7 +6,7 @@ import gray from '../../images/ecosystem/gray.jpeg';
 class Events extends Component {
     render(){
         return(
-        <Grid className="gridNoMargin">
+        <Grid>
             <Row className="text-center " style={{height: "5% ",paddingTop:"7%"}}>
                 <h4>{this.props.messages.title}</h4>
             </Row>
