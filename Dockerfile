@@ -1,16 +1,10 @@
-FROM grails-base-centos
+FROM grails-dependencies
 MAINTAINER Roberto Saldana <rob.salda@gmail.com>
+
+RUN rm -fr /app
 
 # Copy App files
 COPY app /app
-WORKDIR /app
-
-# Get app dependencies
-RUN ./gradlew dependencies
-RUN ./gradlew build
-
-COPY start-app.sh /app
-RUN chmod +x start-app.sh
 
 # Add start command
-CMD ["./start-app.sh"]
+CMD ["./gradlew", "bootRun", "-parallel"]
