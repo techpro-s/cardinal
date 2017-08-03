@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import CardinalNav from '../components/CardinalNav';
-import CardinalFooter from '../components/CardinalFooter';
 
 import MainEcosystem from '../components/ecosystem/MainEcosystem';
 import HowItWorks from '../components/ecosystem/HowItWorks';
@@ -42,13 +40,11 @@ class Ecosystem extends Component{
         console.log(this.state.serverInfo.messages);
         return(
             <div>
-                <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <MainEcosystem messages={this.state.serverInfo.messages.gridMain}/>
                 <HowItWorks messages={this.state.serverInfo.messages.howItWorks}/>
                 <Challenges messages={this.state.serverInfo.messages.challenges}/>
                 <InfoGrid messages={this.state.serverInfo.messages.infoGrid}/>
                 <Events messages={this.state.serverInfo.messages.events}/>
-                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
         );
     }

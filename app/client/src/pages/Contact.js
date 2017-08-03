@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import CardinalNav from '../components/CardinalNav';
-import CardinalFooter from '../components/CardinalFooter';
 import ContactPage from '../components/contact/ContactPage';
 
 import { SERVER_URL} from '../config';
@@ -32,9 +30,7 @@ class Contact extends Component{
         }
         return(
             <div>
-                <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <ContactPage/>
-                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
         );
     }

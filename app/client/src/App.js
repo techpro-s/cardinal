@@ -1,71 +1,63 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
-import AppNav from './AppNav';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import CardinalNav from './components/CardinalNav';
+import CardinalFooter from './components/CardinalFooter';
 
-import grailsLogo from './images/grails-cupsonly-logo-white.svg';
-import reactLogo from './images/logo.svg';
+import Home from './pages/Home';
+import Kit from './pages/Kit';
+import Platform from './pages/Platform';
+import Ecosystem from './pages/Ecosystem';
+import Contact from './pages/Contact';
+
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from './config';
 import 'whatwg-fetch';
 
 class App extends Component {
 
-  constructor() {
-    super();
-
-    this.state = {
-      serverInfo: {},
-      clientInfo: {
-        version: CLIENT_VERSION,
-        react: REACT_VERSION
+    constructor() {
+      super();
+      this.state = {
+        clientInfo: {
+          version: CLIENT_VERSION,
+          react: REACT_VERSION
+        }
       }
     }
-  }
 
-  componentDidMount() {
-    fetch(SERVER_URL + '/application')
-      .then(r => r.json())
-      .then(json => this.setState({serverInfo: json}))
-      .catch(error => console.error('Error connecting to server: ' + error));
+    componentDidMount() {
+        const search = this.props.location.search; // could be '?foo=bar'
+        const params = new URLSearchParams(search);
+        const lang = params.get('lang'); // bar
+        var query = lang != null ? "?lang=" + lang : "";
+        fetch(SERVER_URL + 'application' + query)
+          .then(r => r.json())
+          .then(json => this.setState({serverInfo: json}))
+          .catch(error => console.error('Error connecting to server: ' + error));
 
-  }
+    }
 
-  render() {
-    const serverInfo = this.state.serverInfo;
-    const clientInfo = this.state.clientInfo;
+    render() {
+        if(!this.state.serverInfo){
+            return <div></div>
+        }
+      console.log(this.state.serverInfo.messages);
 
     return (
-      <div>
-        <AppNav serverInfo={serverInfo} clientInfo={clientInfo}/>
-        <div className="grails-logo-container">
-          <img className="grails-logo" src={grailsLogo} alt="Grails" />
-          <span className="plus-logo">+</span>
-          <img className="hero-logo" src={reactLogo} alt="React" />
+        <div>
+            <BrowserRouter>
+                <div>
+                    <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/kit" component={Kit}/>
+                        <Route exact path="/platform" component={Platform}/>
+                        <Route exact path="/ecosystem" component={Ecosystem}/>
+                        <Route exact path="/contact" component={Contact}/>
+                    </Switch>
+                    <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
+                </div>
+            </BrowserRouter>
         </div>
-
-        <Grid>
-          <div id="content">
-            <section className="row colset-2-its">
-              <h1 style={{textAlign: 'center'}}>Welcome to Grails</h1>
-              <br/>
-              <p>
-                Congratulations, you have successfully started your first Grails + React application! While in development mode, changes will be loaded automatically when you edit your React app, without even refreshing the page.
-                Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
-              </p>
-
-              <div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                  {serverInfo.controllers ? serverInfo.controllers.map(controller => {
-                    return <li key={controller.name}><a href={SERVER_URL + controller.logicalPropertyName}>{ controller.name }</a></li>;
-                  }) : null }
-                </ul>
-              </div>
-            </section>
-
-          </div>
-        </Grid>
-      </div>
     );
   }
 }
