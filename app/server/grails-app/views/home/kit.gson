@@ -1,12 +1,5 @@
 json {
 	messages {
-		navbar {
-			kit g.message(code:'default.home.navbar.kit')
-			platform g.message(code:'default.home.navbar.platform')
-			ecosystem g.message(code:'default.home.navbar.ecosystem')
-			contact g.message(code:'default.home.navbar.contact')
-			blog g.message(code:'default.home.navbar.blog')
-		}
 		gridMain {
 			title g.message(code:'default.kit.gridMain.title')
 			message1 {
@@ -66,23 +59,5 @@ json {
 		languages {
 			title g.message(code:'default.kit.languages.title')
 		}
-		footer {
-			copyright g.message(code: 'default.home.copyright')
-			company g.message(code: 'default.home.footer.company')
-			about g.message(code: 'default.home.footer.company.about')
-			press g.message(code: 'default.home.footer.company.press')
-			blog g.message(code: 'default.home.footer.company.Blog')
-			software g.message(code: 'default.home.footer.software')
-			kit g.message(code: 'default.home.footer.software.kit')
-			platform g.message(code: 'default.home.footer.software.platform')
-			ecosystem g.message(code: 'default.home.footer.software.Ecosystem')
-			social g.message(code: 'default.home.footer.social')
-			social1 g.message(code: 'default.home.footer.social.1')
-			social2 g.message(code: 'default.home.footer.social.2')
-			social3 g.message(code: 'default.home.footer.social.3')
-			contact g.message(code: 'default.home.footer.contact')
-			policy g.message(code: 'default.home.footer.policy')
-		}
-
 	}
 }
