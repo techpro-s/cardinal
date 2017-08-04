@@ -29,7 +29,7 @@ class App extends Component {
         const params = new URLSearchParams(search);
         const lang = params.get('lang'); // bar
         var query = lang != null ? "?lang=" + lang : "";
-        fetch(SERVER_URL + 'application' + query)
+        fetch(SERVER_URL + 'home/common' + query)
           .then(r => r.json())
           .then(json => this.setState({serverInfo: json}))
           .catch(error => console.error('Error connecting to server: ' + error));
