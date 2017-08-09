@@ -12,6 +12,7 @@ class HomeController {
     def platform() { }
     def ecosystem() { }
     def contact() { }
+    def common() { }
 
     def sendEmail() {
         def email = request.JSON?.email

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import CardinalNav from '../components/CardinalNav';
-import CardinalFooter from '../components/CardinalFooter';
 import ProductsCarousel from '../components/home/ProductsCarousel';
 import CardinalInfo from '../components/home/CardinalInfo';
 import MainBanner from '../components/home/MainBanner';
@@ -42,7 +40,6 @@ class Home extends Component{
         console.log(this.state.serverInfo.messages);
         return(
             <div>
-                <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <ProductsCarousel messages={this.state.serverInfo.messages.carousel}/>
                 <InfoGrid messages={this.state.serverInfo.messages.infogrid} style={{background:"#171717"}}/>
 
@@ -50,7 +47,6 @@ class Home extends Component{
 <MainBanner/>
                 <TrustedCompanies messages={this.state.serverInfo.messages.trust}/>
 
-                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
         );
     }

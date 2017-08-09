@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import CardinalNav from '../components/CardinalNav';
-import CardinalFooter from '../components/CardinalFooter';
 import MainPlatform from '../components/platform/MainPlatform';
 import CourseOverview from '../components/platform/CourseOverview';
 import PlatformFeatures from '../components/platform/PlatformFeatures';
@@ -34,11 +32,9 @@ class Platform extends Component{
         console.log(this.state.serverInfo.messages);
         return(
             <div>
-                <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <MainPlatform messages={this.state.serverInfo.messages.main}/>
                 <CourseOverview messages={this.state.serverInfo.messages.courseOverview}/>
                 <PlatformFeatures messages={this.state.serverInfo.messages.platformFeatures}/>
-                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
         );
     }

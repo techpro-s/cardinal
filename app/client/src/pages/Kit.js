@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import CardinalNav from '../components/CardinalNav';
-import CardinalFooter from '../components/CardinalFooter';
 
 import MainKit from '../components/kit/MainKit';
 import InfoGrid from '../components/kit/InfoGrid';
@@ -41,12 +39,10 @@ class Kit extends Component{
         console.log(this.state.serverInfo.messages);
         return(
             <div>
-                <CardinalNav messages={this.state.serverInfo.messages.navbar}/>
                 <MainKit messages={this.state.serverInfo.messages.gridMain}/>
                 <InfoGrid messages={this.state.serverInfo.messages.infoGrid}/>
                 <PerfectFor messages={this.state.serverInfo.messages.perfectFor}/>
                 <Languages messages={this.state.serverInfo.messages.languages}/>
-                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
         );
     }
