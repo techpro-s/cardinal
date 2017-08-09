@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
 
 import MainEcosystem from '../components/ecosystem/MainEcosystem';
 import HowItWorks from '../components/ecosystem/HowItWorks';
@@ -22,10 +23,9 @@ class Ecosystem extends Component{
     }
 
     componentDidMount() {
-        const search = this.props.location.search; // could be '?foo=bar'
-        const params = new URLSearchParams(search);
-        const lang = params.get('lang'); // bar
-        var query = lang != null ? "?lang=" + lang : "";
+        const cookies = new Cookies();
+        var query = "?lang=" + cookies.get('lang');
+
         fetch(SERVER_URL + 'home/ecosystem' + query)
           .then(r => r.json())
           .then(json => this.setState({serverInfo: json}))

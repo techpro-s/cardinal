@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
+
 import ProductsCarousel from '../components/home/ProductsCarousel';
 import CardinalInfo from '../components/home/CardinalInfo';
 import MainBanner from '../components/home/MainBanner';
-
 import InfoGrid from '../components/home/InfoGrid';
 import TrustedCompanies from '../components/home/TrustedCompanies';
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from '../config';
@@ -22,10 +23,9 @@ class Home extends Component{
     }
 
     componentDidMount() {
-        const search = this.props.location.search; // could be '?foo=bar'
-        const params = new URLSearchParams(search);
-        const lang = params.get('lang'); // bar
-        var query = lang != null ? "?lang=" + lang : "";
+        const cookies = new Cookies();
+        var query = "?lang=" + cookies.get('lang');
+
         fetch(SERVER_URL + 'application' + query)
           .then(r => r.json())
           .then(json => this.setState({serverInfo: json}))
