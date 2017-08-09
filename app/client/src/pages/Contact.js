@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
+
 import ContactPage from '../components/contact/ContactPage';
 
 import { SERVER_URL} from '../config';
@@ -13,10 +15,9 @@ class Contact extends Component{
     }
 
     componentDidMount() {
-        const search = this.props.location.search; // could be '?foo=bar'
-        const params = new URLSearchParams(search);
-        const lang = params.get('lang'); // bar
-        var query = lang != null ? "?lang=" + lang : "";
+        const cookies = new Cookies();
+        var query = "?lang=" + cookies.get('lang');
+
         fetch(SERVER_URL + 'home/platform' + query)
             .then(r => r.json())
             .then(json => this.setState({serverInfo: json}))

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Cookies from 'universal-cookie';
+
 import CardinalNav from './components/CardinalNav';
 import CardinalFooter from './components/CardinalFooter';
 
@@ -25,10 +27,22 @@ class App extends Component {
     }
 
     componentDidMount() {
+
+        const cookies = new Cookies();
+
         const search = this.props.location.search; // could be '?foo=bar'
         const params = new URLSearchParams(search);
         const lang = params.get('lang'); // bar
-        var query = lang != null ? "?lang=" + lang : "";
+
+        if (lang != null){
+            cookies.set('lang', lang, { path: '/' });
+        }else{
+            if(cookies.get('lang') == null){
+                cookies.set('lang', 'en', { path: '/' });
+            }
+        }
+
+        var query = "?lang=" + cookies.get('lang');
         fetch(SERVER_URL + 'home/common' + query)
           .then(r => r.json())
           .then(json => this.setState({serverInfo: json}))
