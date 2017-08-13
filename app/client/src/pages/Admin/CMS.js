@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CardinalFooter from '../components/CardinalFooter';
-import ChallengesList from '../components/CMs/ChallengesList';
-import LeftNav from '../components/CMs/LeftNav';
-import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from '../config';
+import CardinalFooter from '../../components/CardinalFooter';
+import ChallengesList from '../../components/CMS/ChallengesList';
+import LeftNav from '../../components/CMS/LeftNav';
+import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from '../../config';
 import 'whatwg-fetch';
 
 class Home extends Component{

@@ -16,7 +16,7 @@ class ChallengesList extends Component{
         const challenges = this.state.List;
         const accordion = challenges.map((challenge, index) =>
             <Accordion>
-                <Panel header={challenge.Title} eventKey=index>
+                <Panel header={challenge.Title} eventKey="{index}">
                     <Grid>
                         <Row className="text-center">
                             <Col xs={12} md={12}>{challenge.description}</Col>
@@ -29,9 +29,9 @@ class ChallengesList extends Component{
                             <Carousel>
                                 challenge.sponsors.map((sponsor) =>
                                 <Carousel.Item>
-                                    <Image className="center-block" src={sponsor.imageUrl} responsive/>
+                                    <Image className="center-block" src={challenge.sponsor.imageUrl} responsive/>
                                     <Carousel.Caption>
-                                        <h3>{sponsor.name}</h3>
+                                        <h3>{challenge.sponsor.name}</h3>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                                 );
@@ -50,4 +50,4 @@ class ChallengesList extends Component{
     }
 }
 
-export default LeftNav;
+export default ChallengesList;

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { CookiesProvider } from 'react-cookie';
 import App from './App';
+import CMS from './pages/Admin/CMS'
 
 import './css/cardinal.css';
 
