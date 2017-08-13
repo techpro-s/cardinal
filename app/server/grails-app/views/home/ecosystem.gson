@@ -1,0 +1,63 @@
+json {
+	messages {
+		gridMain {
+			title g.message(code:'default.ecosystem.gridMain.title')
+			message g.message(code:'default.ecosystem.gridMain.message')
+		}
+		howItWorks {
+			title g.message(code:'default.ecosystem.howItWorks.title')
+            school {
+                title g.message(code:'default.ecosystem.howItWorks.school.title')
+                message g.message(code:'default.ecosystem.howItWorks.school.message')
+            }
+            solution {
+                title g.message(code:'default.ecosystem.howItWorks.solution.title')
+                message g.message(code:'default.ecosystem.howItWorks.solution.message')
+            }
+            privateBu {
+                title g.message(code:'default.ecosystem.howItWorks.private.title')
+                message g.message(code:'default.ecosystem.howItWorks.private.message')
+            }
+            goverment {
+                title g.message(code:'default.ecosystem.howItWorks.goverment.title')
+                message g.message(code:'default.ecosystem.howItWorks.goverment.message')
+            }
+		}
+		challenges {
+			title g.message(code:'default.ecosystem.challenges.title')
+			announcement g.message(code:'default.ecosystem.challenges.announcement')
+            challenge1 {
+                title g.message(code:'default.ecosystem.challenges.challenge1.title')
+                message g.message(code:'default.ecosystem.challenges.challenge1.message')
+            }
+            challenge2 {
+                title g.message(code:'default.ecosystem.challenges.challenge2.title')
+                message g.message(code:'default.ecosystem.challenges.challenge2.message')
+            }
+            participate g.message(code:'default.ecosystem.challenges.participate')
+		}
+		infoGrid {
+			schools {
+                title g.message(code:'default.ecosystem.infoGrid.schools.title')
+            }
+            sponsors {
+                title g.message(code:'default.ecosystem.infoGrid.sponsor.title')
+            }
+		}
+        events {
+			title g.message(code:'default.ecosystem.events.title')
+            event1 {
+                title g.message(code:'default.ecosystem.events.event1.title')
+                message g.message(code:'default.ecosystem.events.event1.message')
+            }
+            event2 {
+                title g.message(code:'default.ecosystem.events.event2.title')
+                message g.message(code:'default.ecosystem.events.event2.message')
+            }
+            event3 {
+                title g.message(code:'default.ecosystem.events.event3.title')
+                message g.message(code:'default.ecosystem.events.event3.message')
+            }
+        }
+	}
+}

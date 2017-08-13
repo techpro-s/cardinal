@@ -1,7 +1,0 @@
-import app.Sponsor
-
-model {
-	Sponsor sponsor
-}
-
-json g.render(sponsor)

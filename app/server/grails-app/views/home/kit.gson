@@ -1,0 +1,63 @@
+json {
+	messages {
+		gridMain {
+			title g.message(code:'default.kit.gridMain.title')
+			message1 {
+				pt1 g.message(code:'default.kit.gridMain.message1.pt1')
+				pt2 g.message(code:'default.kit.gridMain.message1.pt2')
+				pt3 g.message(code:'default.kit.gridMain.message1.pt3')
+				pt4 g.message(code:'default.kit.gridMain.message1.pt4')
+				pt5 g.message(code:'default.kit.gridMain.message1.pt5')
+				pt6 g.message(code:'default.kit.gridMain.message1.pt6')
+				pt7 g.message(code:'default.kit.gridMain.message1.pt7')
+				pt8 g.message(code:'default.kit.gridMain.message1.pt8')
+				pt8 g.message(code:'default.kit.gridMain.message1.pt9')
+			}
+			message2 {
+				pt1 g.message(code:'default.kit.gridMain.message2.pt1')
+				pt2 g.message(code:'default.kit.gridMain.message2.pt2')
+				pt3 g.message(code:'default.kit.gridMain.message2.pt3')
+				pt4 g.message(code:'default.kit.gridMain.message2.pt4')
+				pt5 g.message(code:'default.kit.gridMain.message2.pt5')
+			}
+		}
+		infoGrid {
+			title {
+				pt1 g.message(code:'default.kit.infoGrid.title.pt1')
+				pt2 g.message(code:'default.kit.infoGrid.title.pt2')
+				pt3 g.message(code:'default.kit.infoGrid.title.pt3')
+				message g.message(code:'default.kit.infoGrid.title.message')
+			}
+			gps {
+				title g.message(code:'default.kit.infoGrid.gps.title')
+				message g.message(code:'default.kit.infoGrid.gps.message')
+			}
+			sensors {
+				title g.message(code:'default.kit.infoGrid.sensors.title')
+				message {
+					pt1 g.message(code:'default.kit.infoGrid.sensors.message.pt1')
+					pt2 g.message(code:'default.kit.infoGrid.sensors.message.pt2')
+				}
+			}
+			navigation {
+				title g.message(code:'default.kit.infoGrid.navigation.title')
+				message g.message(code:'default.kit.infoGrid.navigation.message')
+			}
+			ai {
+				title g.message(code:'default.kit.infoGrid.ai.title')
+				message g.message(code:'default.kit.infoGrid.ai.message')
+			}
+		}
+		perfectFor {
+			title g.message(code:'default.kit.perfectFor.title')
+			mech g.message(code:'default.kit.perfectFor.mech')
+			cs g.message(code:'default.kit.perfectFor.cs')
+			electronics g.message(code:'default.kit.perfectFor.electronics')
+			net g.message(code:'default.kit.perfectFor.net')
+			rel g.message(code:'default.kit.perfectFor.rel')
+		}
+		languages {
+			title g.message(code:'default.kit.languages.title')
+		}
+	}
+}

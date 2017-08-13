@@ -1,0 +1,63 @@
+import grails.core.*
+import grails.util.*
+import grails.plugins.*
+import org.grails.core.artefact.*
+
+model {
+	GrailsApplication grailsApplication
+	GrailsPluginManager pluginManager
+}
+
+json {
+	message "Welcome to Grails!"
+    environment Environment.current.name
+    appversion grailsApplication.metadata.getApplicationVersion()
+    grailsversion GrailsUtil.grailsVersion
+    appprofile grailsApplication.config.getProperty('grails.profile')
+    groovyversion GroovySystem.getVersion()
+    jvmversion System.getProperty('java.version')
+    reloadingagentenabled Environment.reloadingAgentEnabled
+    artefacts (
+        controllers: grailsApplication.getArtefactInfo(ControllerArtefactHandler.TYPE).classesByName.size(),
+        domains: grailsApplication.getArtefactInfo(DomainClassArtefactHandler.TYPE).classesByName.size(),
+        services: grailsApplication.getArtefactInfo(ServiceArtefactHandler.TYPE).classesByName.size()
+    )
+    controllers grailsApplication.getArtefacts(ControllerArtefactHandler.TYPE), { GrailsClass c ->
+        name c.fullName
+        logicalPropertyName c.logicalPropertyName
+    }
+    plugins pluginManager.allPlugins, { GrailsPlugin plugin ->
+    	name plugin.name
+    	version plugin.version
+    }
+	messages {
+		carousel {
+			kit_title g.message(code:'default.home.carousel.title.kit')
+			platform_title g.message(code:'default.home.carousel.title.platform')
+			ecosystem_title g.message(code:'default.home.carousel.title.ecosystem')
+			kit_message g.message(code:'default.home.carousel.message.kit')
+			platform_message g.message(code:'default.home.carousel.message.platform')
+			ecosystem_message g.message(code:'default.home.carousel.message.ecosystem')
+
+		}
+		infogrid {
+			drone_title g.message(code:'default.home.infogrid.title.drone')
+			platform_title g.message(code:'default.home.infogrid.title.platform')
+			ecosystem_title g.message(code:'default.home.infogrid.title.ecosystem')
+			drone_message g.message(code:'default.home.infogrid.message.drone')
+			platform_message g.message(code:'default.home.infogrid.message.platform')
+			ecosystem_message g.message(code:'default.home.infogrid.message.ecosystem')
+			infoGridMain g.message(code:'default.home.infogrid.message.infoGridMain')
+		}
+		jumbotron {
+			message g.message(code:'default.home.jumbotron.message')
+			p1 g.message(code:'default.home.jumbotron.message.p1')
+			list  g.message(code:'default.home.jumbotron.message.list')
+		}
+		trust {
+			info g.message(code:'default.home.trustthey')
+			us g.message(code:'default.home.trusttrust')
+
+		}
+	}
+}

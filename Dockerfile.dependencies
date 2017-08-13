@@ -1,0 +1,11 @@
+FROM grails-base-centos
+MAINTAINER Roberto Saldana <rob.salda@gmail.com>
+
+# Copy App files
+COPY app /app
+WORKDIR /app
+
+# Get app dependencies
+RUN ./gradlew dependencies
+RUN ./gradlew build
+

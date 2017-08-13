@@ -1,8 +1,0 @@
-import app.Sponsor
-
-model {
-	Iterable<Sponsor> sponsorList
-}
-
-json tmpl.sponsor(sponsorList ?: [])
-

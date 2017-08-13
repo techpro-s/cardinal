@@ -1,0 +1,7 @@
+import app.Sponsor
+
+model {
+	Sponsor sponsor
+}
+
+json tmpl.sponsor(sponsor)
