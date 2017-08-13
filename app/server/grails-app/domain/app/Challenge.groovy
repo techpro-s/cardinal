@@ -9,7 +9,7 @@ class Challenge {
     SupportedLang lang
     Challenge parent
 
-    static hasMany = [challenges: Challenge,sponsores: Sponsor]
+    static hasMany = [challenges: Challenge, sponsors: Sponsor]
 
     static constraints = {
         parent nullable: true
