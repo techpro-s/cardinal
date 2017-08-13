@@ -1,4 +1,4 @@
-FROM grails-base-centos
+FROM techpro/centos-grails
 MAINTAINER Roberto Saldana <rob.salda@gmail.com>
 
 # Copy App files
@@ -8,4 +8,3 @@ WORKDIR /app
 # Get app dependencies
 RUN ./gradlew dependencies
 RUN ./gradlew build
-
