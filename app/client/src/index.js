@@ -13,10 +13,10 @@ ReactDOM.render((
         <BrowserRouter>
             <Switch>
                 <Route path="/" component={App}/>
-                <Route path ='/Admin' componet={CMS}/>"
-                <Route path ='/Admin/CMS/Challenge' componet={CMS}/>"
-                <Route path ='/Admin/CMS/Events' componet={CMS}/>"
-                <Route path ='/Admin/CMS/Users' componet={CMS}/>"
+                <Route path='/Admin' componet={CMS}/>"
+                <Route path='/Admin/CMS/Challenge' componet={CMS}/>"
+                <Route path='/Admin/CMS/Events' componet={CMS}/>"
+                <Route path='/Admin/CMS/Users' componet={CMS}/>"
             </Switch>
         </BrowserRouter>
     </CookiesProvider>)
