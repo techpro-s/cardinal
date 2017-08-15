@@ -10,6 +10,7 @@ import Kit from './pages/Kit';
 import Platform from './pages/Platform';
 import Ecosystem from './pages/Ecosystem';
 import Contact from './pages/Contact';
+import Sponsor from './pages/Sponsor/index'
 
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from './config';
 import 'whatwg-fetch';
@@ -67,6 +68,7 @@ class App extends Component {
                         <Route exact path="/platform" component={Platform}/>
                         <Route exact path="/ecosystem" component={Ecosystem}/>
                         <Route exact path="/contact" component={Contact}/>
+                        <Route exact path="/sponsor" component={Sponsor}/>
                     </Switch>
                     <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
                 </div>

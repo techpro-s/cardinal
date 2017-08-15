@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Cookies from 'universal-cookie';
 
-import ContactPage from '../components/contact/ContactPage';
 
-import { SERVER_URL} from '../config';
+
+import { SERVER_URL} from '../../config';
+import SponsorForm from "./sponsorForm";
 
 class Contact extends Component{
 
@@ -18,7 +19,7 @@ class Contact extends Component{
         const cookies = new Cookies();
         var query = "?lang=" + cookies.get('lang');
 
-        fetch(SERVER_URL + 'home/contact' + query)
+        fetch(SERVER_URL + 'sponsor/index' + query)
             .then(r => r.json())
             .then(json => this.setState({serverInfo: json}))
             .catch(error => console.error('Error connecting to server: ' + error));
@@ -31,7 +32,7 @@ class Contact extends Component{
         }
         return(
             <div>
-                <ContactPage messages={this.state.serverInfo.messages.contact}/>
+                <SponsorForm messages={this.state.serverInfo.messages.contact}/>
             </div>
         );
     }
