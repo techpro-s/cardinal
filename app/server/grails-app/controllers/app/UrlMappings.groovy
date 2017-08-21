@@ -12,7 +12,7 @@ class UrlMappings {
 
         "/$controller/$action?/$id?"()
         "/"(controller: 'application', action:'index')
-        "/"( controller:"home", action:"sendEmail") {name = "name"}
+        //"/"( controller:"home", action:"sendEmail") {name = "name"}
         "500"(view: '/error')
         "404"(view: '/notFound')
     }

@@ -1,8 +1,16 @@
 import app.Challenge
 
 model {
-	Iterable<Challenge> challengeList
+    Iterable<Challenge> challengeList
 }
-
-json tmpl.challenge(challengeList ?: [])
+json {
+    messages {
+        contact {
+            email g.message(code: 'default.contact.email')
+            user g.message(code: 'default.contact.user')
+            message g.message(code: 'default.contact.message')
+        }
+        challengeList tmpl.challenge(challengeList ?: [])
+    }
+}
 

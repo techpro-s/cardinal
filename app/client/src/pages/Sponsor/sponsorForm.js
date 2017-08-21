@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import {Alert,Row,Form,FormGroup,Col,FormControl,ControlLabel,Button} from 'react-bootstrap';
+import SponsorEdit from './SponsorEdit';
 import { SERVER_URL} from '../../config';
 class SponsorForm extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class SponsorForm extends Component {
             console.warn("missing required field!");
             return;
         }
-        axios.post(SERVER_URL+'/sponsor/save', {
+        axios.post(SERVER_URL+'sponsor/save', {
             name: name,
             imageUrl: imageUrl
         }).then(function(response)  {
@@ -35,6 +36,12 @@ class SponsorForm extends Component {
                 alert,
                 document.getElementById('alertRow')
             );
+            const sponsor=<div><SponsorEdit key={response.data.id} sponsor={response.data}/><div id="SponsorAppend"/></div>;
+            ReactDOM.render(
+                sponsor,
+                document.getElementById('SponsorAppend')
+            );
+            document.getElementById('SponsorAppend').setAttribute('id',response.data.id);
         }).catch(function (error) {
             if (error.response){
             const alert=
@@ -61,8 +68,11 @@ class SponsorForm extends Component {
 
     render() {
         return (
-            <div>
+            <div key={this.props.key} className="col-xs-12 col-md-6">
                 <Row id="alertRow"/>
+                <Row>
+                <h3> New Sponsor</h3>
+                </Row>
                 <Form horizontal onSubmit={this.handleSubmit}>
                     <FormGroup controlId="formHorizontalName">
                         <Col componentClass={ControlLabel} sm={2}>

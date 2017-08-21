@@ -6,6 +6,7 @@ class Challenge {
     Date startDate
     Date endDate
     boolean enable =false
+    String PDFUrl
     SupportedLang lang
     Challenge parent
 

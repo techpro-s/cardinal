@@ -11,9 +11,11 @@ import Platform from './pages/Platform';
 import Ecosystem from './pages/Ecosystem';
 import Contact from './pages/Contact';
 import Sponsor from './pages/Sponsor/index'
+import Challenge from './pages/Challenges/index'
 
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from './config';
 import 'whatwg-fetch';
+import Challenges from "./components/ecosystem/Challenges";
 
 class App extends Component {
 
@@ -69,6 +71,7 @@ class App extends Component {
                         <Route exact path="/ecosystem" component={Ecosystem}/>
                         <Route exact path="/contact" component={Contact}/>
                         <Route exact path="/sponsor" component={Sponsor}/>
+                        <Route exact path="/challenge" component={Challenge}/>
                     </Switch>
                     <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
                 </div>

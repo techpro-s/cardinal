@@ -4,8 +4,8 @@ import Cookies from 'universal-cookie';
 
 
 import { SERVER_URL} from '../../config';
-import SponsorForm from "./sponsorForm";
-import SponsorList from "./SponsorList";
+import ChallengeForm from "./ChallengeForm";
+import ChallengeList from "./ChallengeList";
 class Contact extends Component{
 
     constructor() {
@@ -19,7 +19,7 @@ class Contact extends Component{
         const cookies = new Cookies();
         var query = "?lang=" + cookies.get('lang');
 
-        fetch(SERVER_URL + 'sponsor/index' + query)
+        fetch(SERVER_URL + 'challenge/index' + query)
             .then(r => r.json())
             .then(json => this.setState({serverInfo: json}))
             .catch(error => console.error('Error connecting to server: ' + error));
@@ -30,21 +30,21 @@ class Contact extends Component{
         if(!this.state.serverInfo){
             return <div></div>
         }
-        if(this.state.serverInfo.messages.sponsorList){
+        if(this.state.serverInfo.messages.challengeList){
          return(
               <div className="container">
 
-                      <SponsorList sponsorList={this.state.serverInfo.messages.sponsorList}/>
+                      <ChallengeList challengeList={this.state.serverInfo.messages.challengeList}/>
 
-                  <SponsorForm messages={this.state.serverInfo.messages.contact}/>
+                  <ChallengeForm messages={this.state.serverInfo.messages.contact}/>
 
              </div>)
          }
         return(
 
             <div className="container">
-<div id="SponsorAppend" className="col-xs-12 col-md-6"/>
-                <SponsorForm messages={this.state.serverInfo.messages.contact}/>
+                 <div id="ChallengeAppend" className="col-xs-12 col-md-6"/>
+                <ChallengeForm messages={this.state.serverInfo.messages.contact}/>
             </div>
         );
     }
