@@ -1,55 +1,57 @@
 import React, { Component } from 'react';
 import { Carousel, Image, Grid, Row, Col, Button } from 'react-bootstrap';
 
-import white from '../../images/ecosystem/white.jpg';
-import gray from '../../images/ecosystem/gray.jpeg';
+import Cookies from 'universal-cookie';
+import { SERVER_URL} from '../../config';
+import ChallengeDisplay from '../../pages/Challenges/ChallengeDisplay'
 
 class Challenges extends Component {
-    render(){
-        return(
-             <div style={{paddingTop:"7%", paddingLeft:"20%", paddingRight:"20%"}}>
-                <h4 className="text-center">{this.props.messages.title}</h4>
-                <Carousel style={{height:"300px"}}>
-                    <Carousel.Item style={{height:"300px"}}>
-                        <Image className="center-block" src={white} responsive/>
-                        <Carousel.Caption style={{top:"5%"}}>
-                            <Grid>
-                                <Row className="left-text">
-                                    <Col md={2} xs={2} lg={2}>
-                                        <Image src={gray} style={{width:"100%"}}/>
-                                    </Col>
-                                    <Col md={4} xs={4} lg={4}>
-                                        <h4 style={{color:"#000000"}}>{this.props.messages.challenge1.title}</h4>
-                                        <p style={{color:"#000000"}}>{this.props.messages.challenge1.message}</p>
-                                        <Button bsStyle="link">{this.props.messages.announcement}</Button><br/>
-                                        <Button bsStyle="primary">{this.props.messages.participate}</Button>
-                                    </Col>
-                                </Row>
-                            </Grid>
-                        </Carousel.Caption>
+    constructor(props) {
+        super(props);
+        this.state = {
+            messages:this.props.messages
+        };
+    }
+    componentDidMount() {
+        const cookies = new Cookies();
+        var query = "?lang=" + cookies.get('lang');
 
-                    </Carousel.Item>
-                    <Carousel.Item style={{height:"300px"}}>
-                        <Image className="center-block" src={white} responsive/>
-                        <Carousel.Caption style={{top:"5%"}}>
-                            <Grid>
-                                <Row className="left-text">
-                                    <Col md={2} xs={2} lg={2}>
-                                        <Image src={gray} style={{width:"100%"}}/>
-                                    </Col>
-                                    <Col md={4} xs={4} lg={4}>
-                                        <h4 style={{color:"#000000"}}>{this.props.messages.challenge2.title}</h4>
-                                        <p style={{color:"#000000"}}>{this.props.messages.challenge2.message}</p>
-                                        <Button bsStyle="link">{this.props.messages.announcement}</Button><br/>
-                                        <Button bsStyle="primary">{this.props.messages.participate}</Button>
-                                    </Col>
-                                </Row>
-                            </Grid>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
-            </div>
-        );
+        fetch(SERVER_URL + 'challenge/index' + query)
+            .then(r => r.json())
+            .then(json => this.setState({serverInfo: json}))
+            .catch(error => console.error('Error connecting to server: ' + error));
+    }
+    render(){
+
+
+                    if(!this.state.serverInfo){
+                    return <div></div>
+                }
+                    if(this.state.serverInfo.messages.challengeList){
+                    return(
+                        <div style={{paddingTop:"7%"}}>
+                    <h4 className="text-center">{this.props.messages.title}</h4>
+                    <Carousel style={{height:"600px"}}>
+
+                        {this.state.serverInfo.messages.challengeList.map(function(challenge, i) {
+                            return ( <Carousel.Item><ChallengeDisplay key={i} challenge={challenge} messages={this.state.messages}/></Carousel.Item>
+                            )},this)}
+
+
+
+                    </Carousel>
+                        </div>
+                    )
+                }
+                    return(
+
+                    <div className="container">
+                       No Active Challenges
+                    </div>
+                    );
+
+
+
     }
 }
 

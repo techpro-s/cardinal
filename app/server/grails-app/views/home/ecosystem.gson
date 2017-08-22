@@ -35,6 +35,12 @@ json {
                 message g.message(code:'default.ecosystem.challenges.challenge2.message')
             }
             participate g.message(code:'default.ecosystem.challenges.participate')
+            schools {
+                title g.message(code:'default.ecosystem.infoGrid.schools.title')
+            }
+            sponsors {
+                title g.message(code:'default.ecosystem.infoGrid.sponsor.title')
+            }
 		}
 		infoGrid {
 			schools {

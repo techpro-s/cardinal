@@ -12,6 +12,7 @@ class Contact extends Component{
         super();
         this.state = {
 
+
         }
     }
 
@@ -24,6 +25,11 @@ class Contact extends Component{
             .then(json => this.setState({serverInfo: json}))
             .catch(error => console.error('Error connecting to server: ' + error));
 
+        fetch(SERVER_URL + 'sponsor/index' + query)
+            .then(r => r.json())
+            .then(json => this.setState({sponsorModel: json}))
+            .catch(error => console.error('Error connecting to server: ' + error));
+
     }
 
     render() {
@@ -34,9 +40,9 @@ class Contact extends Component{
          return(
               <div className="container">
 
-                      <ChallengeList challengeList={this.state.serverInfo.messages.challengeList}/>
+                      <ChallengeList challengeList={this.state.serverInfo.messages.challengeList} sponsorList={this.state.sponsorModel.messages.sponsorList}/>
 
-                  <ChallengeForm messages={this.state.serverInfo.messages.contact}/>
+                  <ChallengeForm sponsorList={this.state.sponsorModel.messages.sponsorList}  messages={this.state.serverInfo.messages.contact}/>
 
              </div>)
          }
@@ -44,7 +50,8 @@ class Contact extends Component{
 
             <div className="container">
                  <div id="ChallengeAppend" className="col-xs-12 col-md-6"/>
-                <ChallengeForm messages={this.state.serverInfo.messages.contact}/>
+                {console.log(this.state.sponsorModel)}
+                <ChallengeForm sponsorList={this.state.sponsorModel.messages.sponsorList} messages={this.state.serverInfo.messages.contact} />
             </div>
         );
     }

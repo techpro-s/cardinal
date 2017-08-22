@@ -2,34 +2,53 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Datetime from 'react-datetime';
-import {Alert,Row,Form,FormGroup,Col,FormControl,ControlLabel,Button} from 'react-bootstrap';
-//import SponsorEdit from './SponsorEdit';
+
+import {Checkbox,Alert,Row,Form,FormGroup,Col,FormControl,ControlLabel,Button} from 'react-bootstrap';
+import ChallengeEdit from './ChallengeEdit';
 import { SERVER_URL} from '../../config';
 class ChallengeForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            imageUrl: ''
+            sponsorList:this.props.sponsorList,
+            title: '',
+            description: '',
+            startDate: '',
+            endDate:'',
+            PDFUrl:'',
+            enable:'',
+            backGroundImg:'',
+            sponsors:{}
+
         };
     }
+
+
+
+
     handleSubmit = (event) => {
         event.preventDefault();
 
-        const {name, imageUrl} = this.state;
+        const {title, description,startDate,endDate,PDFUrl,backGroundImg,enable,sponsors,sponsorList} = this.state;
 
-        if (!name || !imageUrl ) {
+        if (!title || !description ) {
             console.warn("missing required field!");
             return;
         }
-        axios.post(SERVER_URL+'sponsor/save', {
-            name: name,
-            imageUrl: imageUrl
+        axios.post(SERVER_URL+'challenge/save', {
+            title: title,
+            description: description,
+            startDate: startDate,
+            endDate:endDate,
+            PDFUrl:PDFUrl,
+            backGroundImg:backGroundImg,
+            enable:enable,
+            sponsors:sponsors
         }).then(function(response)  {
             console.log(response);
             const alert=
                 <Alert bsStyle="success">
-                    {response.data.name} has been saved
+                    {response.data.title} has been saved
 
                 </Alert>;
 
@@ -37,11 +56,11 @@ class ChallengeForm extends Component {
                 alert,
                 document.getElementById('alertRow')
             );
-            const sponsor=<div>
-                {/*<SponsorEdit key={response.data.id} sponsor={response.data}/><div id="SponsorAppend"/>*/}
+            const challenge=<div>
+                <ChallengeEdit key={response.data.id} challenge={response.data} sponsorList={sponsorList}/><div id="ChallengeAppend"/>
             </div>;
             ReactDOM.render(
-                sponsor,
+                challenge,
                 document.getElementById('ChallengeAppend')
             );
             document.getElementById('ChallengeAppend').setAttribute('id',response.data.id);
@@ -59,7 +78,7 @@ class ChallengeForm extends Component {
             }
             console.log(error);
         });
-        this.setState({ name: '', email: ''});
+       // this.setState({ name: '', email: ''});
     };
     handleTitleChange = (event) => {
         this.setState({ title: event.target.value });
@@ -68,15 +87,30 @@ class ChallengeForm extends Component {
         this.setState({ description: event.target.value });
     };
     handleStartDateChange = (event) => {
-        this.setState({ StartDate: event.target.value });
+        this.setState({ startDate: event });
     };
     handleEndDateChange = (event) => {
-        this.setState({ EndDate: event.target.value });
+        this.setState({ endDate: event });
     };
     handlePDFURlChange = (event) => {
         this.setState({ PDFUrl: event.target.value });
     };
-
+    handleEnableChange = (event) => {
+    this.setState({ enable: event.target.checked });
+};
+    handleImageURLChange=(event) => {
+    this.setState({ backGroundImg: event.target.value });
+};
+    handleSponsorChange =(event)=>{
+        let options = event.target.options;
+        let value = [];
+        for (let i = 0, l = options.length; i < l; i++) {
+            if (options[i].selected) {
+                value.push(options[i].value);
+            }
+        }
+        this.setState({ sponsors: value });
+    };
 
     render() {
         return (
@@ -99,7 +133,7 @@ class ChallengeForm extends Component {
                             Description
                         </Col>
                         <Col sm={10}>
-                            <FormControl rcomponentClass="textarea" placeholder='Description' required onChange={ this.handleDescriptionChange }/>
+                            <FormControl componentClass="textarea" placeholder='Description' required onChange={ this.handleDescriptionChange }/>
                         </Col>
                     </FormGroup>
                     <FormGroup controlId="formHorizontalStartDate">
@@ -107,7 +141,7 @@ class ChallengeForm extends Component {
                             Start Date
                         </Col>
                         <Col sm={10}>
-                            <Datetime  defaultText="Please select a date" required onChange={ this.handleStartDateChange }/>
+                            <Datetime  placeholder="Please select a date" required onChange={ this.handleStartDateChange }/>
                         </Col>
                     </FormGroup>
                     <FormGroup controlId="formHorizontalEndDate">
@@ -115,18 +149,37 @@ class ChallengeForm extends Component {
                             Start Date
                         </Col>
                         <Col sm={10}>
-                            <Datetime  defaultText="Please select a date" required onChange={ this.handleEndDateChange }/>
+                            <Datetime  placeholder="Please select a date" required onChange={ this.handleEndDateChange }/>
                         </Col>
                     </FormGroup>
                     <FormGroup controlId="formHorizontalPDFUrl">
                         <Col componentClass={ControlLabel} sm={2}>
-                            image Url
+                            PDF Url
                         </Col>
                         <Col sm={10}>
                             <FormControl  placeholder='PDF Url' required onChange={ this.handlePDFURlChange }/>
                         </Col>
                     </FormGroup>
-
+                    <FormGroup controlId="formHorizontalPDFUrl">
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Background ImageUrl
+                        </Col>
+                        <Col sm={10}>
+                            <FormControl  placeholder='Background ImageUrl' required onChange={ this.handleImageURLChange }/>
+                        </Col>
+                    </FormGroup>
+                    <FormGroup controlId="formControlsSelectMultipleSponsor">
+                        <ControlLabel>Sponsors select </ControlLabel>
+                        <FormControl componentClass="select" multiple onChange={ this.handleSponsorChange }>
+                               {this.props.sponsorList.map(function(sponsor, i) {
+                                return (<option key={sponsor.id} value={sponsor.id}>{sponsor.name}</option>)})}
+                        </FormControl>
+                    </FormGroup>
+                    <FormGroup>
+                        <Col smOffset={2} sm={10}>
+                            <Checkbox onChange={this.handleEnableChange}>Enable</Checkbox>
+                        </Col>
+                    </FormGroup>
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
                             <Button className="btn-info COverview" type="submit">

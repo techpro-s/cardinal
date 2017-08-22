@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 
-import {Alert,Row,Form,FormGroup,Col,FormControl,ControlLabel,Button,Image} from 'react-bootstrap';
-// import SponsorEdit from './SponsorEdit'
+import {Row} from 'react-bootstrap';
+import ChallengeEdit from './ChallengeEdit'
 class ChallengeList extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            sponsorList:this.props.sponsorList,
 
         };
     }
@@ -17,9 +18,9 @@ class ChallengeList extends Component {
             <div >
                 <Row id="alertRow"/>
 
-                {/*{this.props.sponsorList.map(function(sponsor, i) {*/}
-                    {/*return (<SponsorEdit key={i} sponsor={sponsor}/>)})}*/}
-                    <div id="SponsorAppend"/>
+                {this.props.challengeList.map(function(challenge, i) {
+                    return (<ChallengeEdit key={i} challenge={challenge} sponsorList={this.state.sponsorList}/>)},this)}
+                    <div id="ChallengeAppend"/>
             </div>
         );
     }

@@ -7,14 +7,14 @@ class Challenge {
     Date endDate
     boolean enable =false
     String PDFUrl
-    SupportedLang lang
+    SupportedLang lang=SupportedLang.English
     Challenge parent
+    String backGroundImg
 
     static hasMany = [challenges: Challenge, sponsors: Sponsor]
 
     static constraints = {
-        parent nullable: true
-        events validator: { val, obj ->
+        parent nullable: true,validator: { val, obj ->
             def retval = true
             if (obj?.parent) {
                 retval = 'challenge.validator.childnochild.error'
