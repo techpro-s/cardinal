@@ -4,4 +4,4 @@ model {
 	Challenge challenge
 }
 
-json g.render(challenge)
+json g.render(challenge, [deep:true])

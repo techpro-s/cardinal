@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Carousel, Image, Grid, Row, Col, Button } from 'react-bootstrap';
+import { Carousel,Grid } from 'react-bootstrap';
 
 import Cookies from 'universal-cookie';
 import { SERVER_URL} from '../../config';
@@ -29,7 +29,8 @@ class Challenges extends Component {
                 }
                     if(this.state.serverInfo.messages.challengeList){
                     return(
-                        <div style={{paddingTop:"7%"}}>
+
+                        <Grid className="flex-container">
                     <h4 className="text-center">{this.props.messages.title}</h4>
                     <Carousel style={{height:"600px"}}>
 
@@ -40,7 +41,7 @@ class Challenges extends Component {
 
 
                     </Carousel>
-                        </div>
+                        </Grid>
                     )
                 }
                     return(

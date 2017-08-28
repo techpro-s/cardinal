@@ -1,6 +1,6 @@
 package app
 
-class Sponsor {
+class School {
 
     String name
     String imageUrl

@@ -11,7 +11,7 @@ class Challenge {
     Challenge parent
     String backGroundImg
 
-    static hasMany = [challenges: Challenge, sponsors: Sponsor]
+    static hasMany = [challenges: Challenge, sponsors: Sponsor,schools:School]
 
     static constraints = {
         parent nullable: true,validator: { val, obj ->

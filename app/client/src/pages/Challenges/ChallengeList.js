@@ -7,6 +7,7 @@ class ChallengeList extends Component {
         super(props);
         this.state = {
             sponsorList:this.props.sponsorList,
+            schoolList:this.props.schoolList,
 
         };
     }
@@ -19,7 +20,7 @@ class ChallengeList extends Component {
                 <Row id="alertRow"/>
 
                 {this.props.challengeList.map(function(challenge, i) {
-                    return (<ChallengeEdit key={i} challenge={challenge} sponsorList={this.state.sponsorList}/>)},this)}
+                    return (<ChallengeEdit key={i} challenge={challenge} sponsorList={this.state.sponsorList} schoolList={this.state.schoolList}/>)},this)}
                     <div id="ChallengeAppend"/>
             </div>
         );

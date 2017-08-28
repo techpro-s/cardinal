@@ -18,6 +18,7 @@ class ChallengeEdit extends Component {
             PDFUrl:props.challenge.PDFUrl,
             enable:props.challenge.enable,
             backGroundImg:props.challenge.backGroundImg,
+            schools:props.challenge.schools,
             sponsors:props.challenge.sponsors
 
         };
@@ -62,7 +63,7 @@ class ChallengeEdit extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        const {id,title, description,startDate,endDate,PDFUrl,backGroundImg,enable,sponsors} = this.state;
+        const {id,title, description,startDate,endDate,PDFUrl,backGroundImg,enable,sponsors,schools} = this.state;
 
         if (!title || !description) {
             console.warn("missing required field!");
@@ -76,7 +77,8 @@ class ChallengeEdit extends Component {
             backGroundImg:backGroundImg,
             PDFUrl:PDFUrl,
             enable:enable,
-            sponsors:sponsors
+            sponsors:sponsors,
+            schools:schools
         }).then(function (response) {
             console.log(response);
             const alert =
@@ -135,6 +137,16 @@ class ChallengeEdit extends Component {
             }
         }
         this.setState({ sponsors: value });
+    };
+    handleSchoolChange =(event)=>{
+        let options = event.target.options;
+        let value = [];
+        for (let i = 0, l = options.length; i < l; i++) {
+            if (options[i].selected) {
+                value.push(options[i].value);
+            }
+        }
+        this.setState({ schools: value });
     };
 
     render() {
@@ -228,6 +240,23 @@ class ChallengeEdit extends Component {
                                     </FormControl>
                                     </Col>
                                 </FormGroup>
+                                </Col>
+                                <Col md={6}>
+                                    <FormGroup controlId="formControlsSelectMultipleSchool">
+                                        <Col componentClass={ControlLabel} md={3}>Schools </Col>
+                                        <Col md={9}>
+                                            <FormControl componentClass="select" multiple onChange={ this.handleSchoolChange }>
+                                                {this.props.schoolList.map(function(school, i) {
+                                                    let options=this.props.challenge.schools;
+                                                    for (let y = 0, l = options.length; y < l; y++) {
+                                                        if (options[y].id===school.id) {
+                                                            return (<option key={school.id} selected="selected" value={school.id}>{school.name}</option>)
+                                                        }
+                                                    }
+                                                    return (<option key={school.id} value={school.id}>{school.name}</option>)},this)}
+                                            </FormControl>
+                                        </Col>
+                                    </FormGroup>
                                 </Col>
                                 <Col md={6}>
                                 <FormGroup>

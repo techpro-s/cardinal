@@ -11,6 +11,7 @@ class ChallengeForm extends Component {
         super(props);
         this.state = {
             sponsorList:this.props.sponsorList,
+            schoolList:this.props.schoolList,
             title: '',
             description: '',
             startDate: '',
@@ -18,6 +19,7 @@ class ChallengeForm extends Component {
             PDFUrl:'',
             enable:'',
             backGroundImg:'',
+            schools:{},
             sponsors:{}
 
         };
@@ -29,7 +31,7 @@ class ChallengeForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        const {title, description,startDate,endDate,PDFUrl,backGroundImg,enable,sponsors,sponsorList} = this.state;
+        const {title, description,startDate,endDate,PDFUrl,backGroundImg,enable,sponsors,sponsorList,schools,schoolList} = this.state;
 
         if (!title || !description ) {
             console.warn("missing required field!");
@@ -43,7 +45,8 @@ class ChallengeForm extends Component {
             PDFUrl:PDFUrl,
             backGroundImg:backGroundImg,
             enable:enable,
-            sponsors:sponsors
+            sponsors:sponsors,
+            schools:schools,
         }).then(function(response)  {
             console.log(response);
             const alert=
@@ -57,7 +60,7 @@ class ChallengeForm extends Component {
                 document.getElementById('alertRow')
             );
             const challenge=<div>
-                <ChallengeEdit key={response.data.id} challenge={response.data} sponsorList={sponsorList}/><div id="ChallengeAppend"/>
+                <ChallengeEdit key={response.data.id} challenge={response.data} sponsorList={sponsorList} schoolList={schoolList}/><div id="ChallengeAppend"/>
             </div>;
             ReactDOM.render(
                 challenge,
@@ -110,6 +113,16 @@ class ChallengeForm extends Component {
             }
         }
         this.setState({ sponsors: value });
+    };
+    handleSchoolChange =(event)=>{
+        let options = event.target.options;
+        let value = [];
+        for (let i = 0, l = options.length; i < l; i++) {
+            if (options[i].selected) {
+                value.push(options[i].value);
+            }
+        }
+        this.setState({ schools: value });
     };
 
     render() {
@@ -173,6 +186,13 @@ class ChallengeForm extends Component {
                         <FormControl componentClass="select" multiple onChange={ this.handleSponsorChange }>
                                {this.props.sponsorList.map(function(sponsor, i) {
                                 return (<option key={sponsor.id} value={sponsor.id}>{sponsor.name}</option>)})}
+                        </FormControl>
+                    </FormGroup>
+                    <FormGroup controlId="formControlsSelectMultipleSchools">
+                        <ControlLabel>Schools select </ControlLabel>
+                        <FormControl componentClass="select" multiple onChange={ this.handleSchoolChange }>
+                            {this.props.schoolList.map(function(school, i) {
+                                return (<option key={school.id} value={school.id}>{school.name}</option>)})}
                         </FormControl>
                     </FormGroup>
                     <FormGroup>
