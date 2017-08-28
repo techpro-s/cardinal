@@ -6,7 +6,7 @@ import ecosystemDiagram from '../../images/ecosystem/ecosystem_diagrama.png';
 class HowItWorks extends Component {
     render(){
         return(
-        <Grid className="gridNoMargin">
+        <Grid className="gridNoMargin flex-container">
             <div style={{height: "5% ",paddingTop:"7%"}}>
             </div>
             <div className="landing-col col-xs-12">
@@ -34,7 +34,7 @@ class HowItWorks extends Component {
                         </p>
                     </Col>
                 </Row>
-                <Row style={{paddingTop:"20%"}}/>
+                <Row style={{paddingTop:"30%"}}/>
                 <Row className="left-text" >
                     <Col md={3} xs={3} lg={3}/>
                     <Col md={2} xs={4} lg={2}>

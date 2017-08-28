@@ -1,0 +1,17 @@
+import app.Sponsor
+
+model {
+	Iterable<Sponsor> sponsorList
+}
+
+
+json{messages {
+	contact{
+		email g.message(code:'default.contact.email')
+		user g.message(code:'default.contact.user')
+		message g.message(code:'default.contact.message')
+	}
+    sponsorList tmpl.sponsor(sponsorList ?: [])
+}
+}
+

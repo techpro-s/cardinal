@@ -58,26 +58,26 @@ class ContactForm extends Component {
     <Form horizontal onSubmit={this.handleSubmit}>
         <FormGroup controlId="formHorizontalName">
             <Col componentClass={ControlLabel} sm={2}>
-                Name
+                {this.props.messages.user}
             </Col>
             <Col sm={10}>
-                <FormControl  placeholder="Name" required onChange={ this.handleNameChange }/>
+                <FormControl  placeholder={this.props.messages.user} required onChange={ this.handleNameChange }/>
             </Col>
         </FormGroup>
         <FormGroup controlId="formHorizontalEmail">
             <Col componentClass={ControlLabel} sm={2}>
-                Email
+                {this.props.messages.email}
             </Col>
             <Col sm={10}>
-                <FormControl type="email" placeholder="Email" required onChange={ this.handleEmailChange }/>
+                <FormControl type="email" placeholder={this.props.messages.email} required onChange={ this.handleEmailChange }/>
             </Col>
         </FormGroup>
         <FormGroup controlId="formHorizontalMessage">
             <Col componentClass={ControlLabel} sm={2}>
-                Message
+                {this.props.messages.message}
             </Col>
             <Col sm={10}>
-                <FormControl required componentClass="textarea" placeholder="Message" onChange={this.handleMessageChange} />
+                <FormControl required componentClass="textarea" placeholder={this.props.messages.message} onChange={this.handleMessageChange} />
             </Col>
         </FormGroup>
         <FormGroup>

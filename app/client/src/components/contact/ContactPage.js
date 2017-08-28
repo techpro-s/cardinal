@@ -30,7 +30,7 @@ class ContactPage extends Component {
                         <Col md={1} xs={2}/>
 
                         <Col xsOffset={2} mdOffset={0} md={4} xs={8} lg={4}>
-                        <ContactForm/>
+                        <ContactForm messages={this.props.messages}/>
                         </Col>
                         <Col md={1} xs={2}/>
 

@@ -1,5 +1,8 @@
-.gradle/
+**.gradle/
+**gradle/
 .idea/
-cardinal.iml
+**.iml
 */.DS_Store
 *.lock
+gradlew
+gradlew.bat

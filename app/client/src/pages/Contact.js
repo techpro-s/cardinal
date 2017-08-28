@@ -18,7 +18,7 @@ class Contact extends Component{
         const cookies = new Cookies();
         var query = "?lang=" + cookies.get('lang');
 
-        fetch(SERVER_URL + 'home/platform' + query)
+        fetch(SERVER_URL + 'home/contact' + query)
             .then(r => r.json())
             .then(json => this.setState({serverInfo: json}))
             .catch(error => console.error('Error connecting to server: ' + error));
@@ -31,7 +31,7 @@ class Contact extends Component{
         }
         return(
             <div>
-                <ContactPage/>
+                <ContactPage messages={this.state.serverInfo.messages.contact}/>
             </div>
         );
     }

@@ -5,7 +5,7 @@ import kitbox from '../../images/ecosystem/banner-01.png'
 class MainEcosystem extends Component {
     render(){
         return(
-        <Grid className="gridNoMargin">
+        <Grid className="gridNoMargin flex-container">
             <div className="landing-col col-xs-12">
                 <Image src={kitbox}/>
             </div>

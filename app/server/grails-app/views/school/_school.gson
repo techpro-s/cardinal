@@ -1,0 +1,7 @@
+import app.School
+
+model {
+	School school
+}
+
+json g.render(school)
