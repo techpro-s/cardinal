@@ -7,5 +7,5 @@ WORKDIR /app
 
 # Get app dependencies
 RUN ./gradlew dependencies
-RUN ./gradlew build
+RUN ./gradlew build -x compileTestGroovy -x integrationTest
 
