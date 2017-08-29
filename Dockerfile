@@ -7,4 +7,4 @@ RUN rm -fr /app
 COPY app /app
 
 # Add start command
-CMD ["./gradlew", "bootRun", "-parallel"]
+CMD ["./gradlew", "-Dgrails.env=prod", "bootRun", "-parallel"]
