@@ -1,9 +1,9 @@
 json {
 	messages {
 		navbar {
-			challenge g.message(code:'default.admin.navbar.challenge')
-			events g.message(code:'default.admin.navbar.events')
-			users g.message(code:'default.admin.navbar.users')
+			challenges g.message(code:'default.admin.navbar.challenges')
+			sponsor g.message(code:'default.admin.navbar.sponsor')
+			school g.message(code:'default.admin.navbar.school')
 		}
 		footer {
 			copyright g.message(code: 'default.home.copyright')

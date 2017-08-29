@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Cookies from 'universal-cookie';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import CardinalFooter from '../../components/CardinalFooter';
 import AdminNavbar from '../../components/CMS/AdminNavbar';
+import Sponsor from '../Sponsor/index';
+import Challenges from '../Challenges/index';
+import School from '../School/index';
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from '../../config';
 import 'whatwg-fetch';
 
@@ -23,10 +27,9 @@ class Cms extends Component{
             <div>
                 <AdminNavbar messages={this.state.serverInfo.messages.navbar}/>
                 <Switch>
-                    <Route path="/Admin/" componet={CMS}/>
-                    <Route path="/Admin/CMS/Challenge" componet={CMS}/>
-                    <Route path="/Admin/CMS/Events" componet={CMS}/>
-                    <Route path="/Admin/CMS/Users" componet={CMS}/>
+                <Route exact path="/admin/sponsor" component={Sponsor}/>
+                <Route exact path="/admin/school" component={School}/>
+                <Route exact path="/admin/challenge" component={Challenge}/>
                 </Switch>
                 <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
@@ -35,7 +38,6 @@ class Cms extends Component{
     }*/
 
     componentDidMount() {
-        console.log("ALGO!!!")
         const cookies = new Cookies();
 
         const search = this.props.location.search; // could be '?foo=bar'
@@ -60,16 +62,24 @@ class Cms extends Component{
 
     render() {
         if(!this.state.serverInfo){
-            return <div>Hello</div>
+            return <div></div>
         }
         console.log(this.state.serverInfo.messages.navbar);
         return(
             <div>
-                <AdminNavbar messages={this.state.serverInfo.messages.navbar}/>
-                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
+                <BrowserRouter>
+                    <div>
+                        <AdminNavbar messages={this.state.serverInfo.messages.navbar}/>
+                        <Switch>
+                            <Route exact path="/admin/" component={Challenges}/>
+                            <Route exact path="/admin/sponsor" component={Sponsor}/>
+                            <Route exact path="/admin/school" component={School}/>
+                            <Route exact path="/admin/challenges" component={Challenges}/>
+                        </Switch>
+                        <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
+                    </div>
+                </BrowserRouter>
             </div>
-
-
         );
     }
 }

@@ -6,7 +6,7 @@ import Cookies from 'universal-cookie';
 import { SERVER_URL} from '../../config';
 import ChallengeForm from "./ChallengeForm";
 import ChallengeList from "./ChallengeList";
-class Contact extends Component{
+class Challenges extends Component{
 
     constructor() {
         super();
@@ -62,4 +62,4 @@ class Contact extends Component{
     }
 }
 
-export default Contact;
+export default Challenges;

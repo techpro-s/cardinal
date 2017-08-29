@@ -12,18 +12,18 @@ class AdminNavbar extends Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/Admin"><img src={cardinalLogo} class="img-responsive" alt="cardinal" /></a>
+                        <a href="/admin"><img src={cardinalLogo} class="img-responsive" alt="cardinal" /></a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav pullRight>
-                    <LinkContainer to="/Admin/CMS/Challenge">
-                        <NavItem eventKey={1}>{this.props.messages.challenge}</NavItem>
+                    <LinkContainer to="/admin/challenges">
+                        <NavItem eventKey={1}>{this.props.messages.challenges}</NavItem>
                     </LinkContainer>
-                    <LinkContainer to="/Admin/CMS/Events">
-                        <NavItem eventKey={2}>{this.props.messages.events}</NavItem>
+                    <LinkContainer to="/admin/sponsor">
+                        <NavItem eventKey={2}>{this.props.messages.sponsor}</NavItem>
                     </LinkContainer>
-                    <LinkContainer to="/Admin/CMS/Users">
-                        <NavItem eventKey={3}>{this.props.messages.users}</NavItem>
+                    <LinkContainer to="/admin/school">
+                        <NavItem eventKey={3}>{this.props.messages.school}</NavItem>
                     </LinkContainer>
                 </Nav>
             </Navbar>

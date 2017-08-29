@@ -12,7 +12,7 @@ ReactDOM.render((
     <CookiesProvider>
         <BrowserRouter>
             <Switch>
-                <Route path="/Admin" component={Cms}/>
+                <Route path="/admin" component={Cms}/>
                 <Route path="/" component={App}/>
             </Switch>
         </BrowserRouter>
