@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
 import CardinalFooter from '../../components/CardinalFooter';
-import ChallengesList from '../../components/CMS/ChallengesList';
-import LeftNav from '../../components/CMS/LeftNav';
+import AdminNavbar from '../../components/CMS/AdminNavbar';
 import { SERVER_URL, CLIENT_VERSION, REACT_VERSION } from '../../config';
 import 'whatwg-fetch';
 
-class Home extends Component{
+class Cms extends Component{
 
     constructor() {
         super();
         this.state = {
-            List:{},
             clientInfo: {
                 version: CLIENT_VERSION,
                 react: REACT_VERSION
@@ -18,34 +17,56 @@ class Home extends Component{
         }
     }
 
+    /*
+    <div>
+        <BrowserRouter>
+            <div>
+                <AdminNavbar messages={this.state.serverInfo.messages.navbar}/>
+                <Switch>
+                    <Route path="/Admin/" componet={CMS}/>
+                    <Route path="/Admin/CMS/Challenge" componet={CMS}/>
+                    <Route path="/Admin/CMS/Events" componet={CMS}/>
+                    <Route path="/Admin/CMS/Users" componet={CMS}/>
+                </Switch>
+                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
+            </div>
+        </BrowserRouter>
+    </div>
+    }*/
+
     componentDidMount() {
-        //Todo Encontrar como pasar la lista a sus respectivos componentes
-        /*const search = this.props.location.search; // could be '?foo=bar'
+        console.log("ALGO!!!")
+        const cookies = new Cookies();
+
+        const search = this.props.location.search; // could be '?foo=bar'
         const params = new URLSearchParams(search);
         const lang = params.get('lang'); // bar
-        var query = lang != null ? "?lang=" + lang : "";
-        fetch(SERVER_URL + 'application' + query)
-            .then(r => r.json())
-            .then(json => this.setState({receptor: json}))
-            .catch(error => console.error('Error connecting to server: ' + error));*/
+
+        if (lang != null){
+            cookies.set('lang', lang, { path: '/' });
+        }else{
+            if(cookies.get('lang') == null){
+                cookies.set('lang', 'en', { path: '/' });
+            }
+        }
+
+        var query = "?lang=" + cookies.get('lang');
+        fetch(SERVER_URL + 'admin/index' + query)
+          .then(r => r.json())
+          .then(json => this.setState({serverInfo: json}))
+          .catch(error => console.error('Error connecting to server: ' + error));
 
     }
 
     render() {
-        const List = this.state.List;
         if(!this.state.serverInfo){
-            return <div></div>
+            return <div>Hello</div>
         }
         console.log(this.state.serverInfo.messages.navbar);
         return(
             <div>
-                <div>
-                    <LeftNav/>
-                </div>
-                <div>
-                    <ChallengesList List={List}/>
-                </div>
-                <CardinalFooter messages={this.state.serverInfo.messages.copyright}/>
+                <AdminNavbar messages={this.state.serverInfo.messages.navbar}/>
+                <CardinalFooter messages={this.state.serverInfo.messages.footer}/>
             </div>
 
 
@@ -53,4 +74,4 @@ class Home extends Component{
     }
 }
 
-export default Home;
+export default Cms;
