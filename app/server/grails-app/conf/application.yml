@@ -14,6 +14,19 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+    mail:
+#        host: 'mail.cardinal.education'
+        host: 'smtp.gmail.com'
+        port: '465'
+        username: 'webapp@cardinal.education'
+        password: '!r2e3w4q'
+#        username: 'wikigdl@gmail.com'
+#        password: 'Baah$%90'
+        props:
+            mail.smtp.auth: 'true'
+            mail.smtp.socketFactory.port: '465'
+            mail.smtp.socketFactory.class: 'javax.net.ssl.SSLSocketFactory'
+            mail.smtp.socketFactory.fallback: 'false'
 info:
     app:
         name: '@info.app.name@'

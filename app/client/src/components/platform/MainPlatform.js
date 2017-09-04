@@ -11,9 +11,9 @@ class MainPlatform extends Component {
                     <Image src={drone}/>
                 </div>
                 <div className="nolanding-col">
-                    <Row className="text-center " style={{height: "12% ", paddingTop: "12%"}}/>
-                    <Row className="text-center">
-                        <Col md={6} xs={6} lg={6}>
+                    <Row className="text-center title-xs" style={{height: "12% ", paddingTop: "12%"}}/>
+                    <Row className="text-center title-xs">
+                        <Col md={6} xs={12} lg={6}>
                             <h4 className="h4Title">{this.props.messages.title}</h4>
                             <p className="pText left-text"> {this.props.messages.text1}
                                 <b><i>{this.props.messages.text2}</i></b>

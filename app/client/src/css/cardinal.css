@@ -192,6 +192,28 @@ section.content {
     flex-direction: column;
     min-height: 50vh;
 }
+.noPadding-xs{
+    padding-top: 30%;
+}
+
+@media screen and (max-width: 994px){
+
+    *[class*='title-xs']{
+       padding:50px;
+    }
+    *[class*='imageXS']{
+        opacity: 0.5;
+        filter: alpha(opacity=50); /* For IE8 and earlier */
+    }
+
+}
+@media screen and (max-width: 994px){
+
+    *[class*='noPadding-xs']{
+        padding:0;
+    }
+
+}
 
 /*!
  * https://github.com/YouCanBookMe/react-datetime
@@ -210,6 +232,12 @@ section.content {
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
     border: 1px solid #f9f9f9;
+}
+.modal-container {
+    position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
 }
 .rdtOpen .rdtPicker {
     display: block;
@@ -400,6 +428,7 @@ td.rdtYear:hover {
     padding-left: 8px;
     width: 48px;
 }
+
 
 .rdtMilli input {
     width: 100%;

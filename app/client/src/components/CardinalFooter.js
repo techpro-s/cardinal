@@ -33,8 +33,8 @@ class CardinalFooter extends Component {
                                     </ul>
                                 </Col>
 
-                                <Col xs={2} md={4}/>
-                                <Col xs={4} md={2}>
+                                <Col xs={2} md={3}/>
+                                <Col xs={4} md={3}>
                                     <Row className="text-center"><b>{this.props.messages.contact}</b></Row>
                                     <br/>
                                     <Row className="text-center">
@@ -48,7 +48,7 @@ class CardinalFooter extends Component {
                             <Row className="text-center" style={{height: "100px ",paddingTop:"100px"}}/>
                             <Row>
                                 <Col className="pull-left"> <p>{this.props.messages.copyright}</p> <p>{this.props.messages.policy}</p></Col>
-                                <Col className="pull-right footer-logo"><a href="#"><img src={cardinalLogo} class="img-responsive " alt="cardinal" /></a></Col>
+                                <Col className="pull-right footer-logo"><a href="#"><img src={cardinalLogo} className="img-responsive " alt="cardinal" /></a></Col>
                             </Row>
                             <Row className="text-center " style={{height: "50px ",paddingTop:"50px"}}/>
                         </Grid>

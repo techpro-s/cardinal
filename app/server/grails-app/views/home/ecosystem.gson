@@ -26,6 +26,9 @@ json {
 		challenges {
 			title g.message(code:'default.ecosystem.challenges.title')
 			announcement g.message(code:'default.ecosystem.challenges.announcement')
+            form{
+                title g.message(code:'default.ecosystem.challenges.form')
+            }
             challenge1 {
                 title g.message(code:'default.ecosystem.challenges.challenge1.title')
                 message g.message(code:'default.ecosystem.challenges.challenge1.message')
