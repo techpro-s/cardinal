@@ -9,12 +9,14 @@ class CardinalNav extends Component {
     render(){
         console.log(this.props);
         return(
-            <Navbar>
+            <Navbar collapseOnSelect>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <a href="/"><img src={cardinalLogo} class="img-responsive" alt="cardinal" /></a>
+                    <a href="/"><img src={cardinalLogo} className="img-responsive" alt="cardinal" /></a>
                 </Navbar.Brand>
+                <Navbar.Toggle />
             </Navbar.Header>
+                <Navbar.Collapse>
             <Nav pullRight>
                 <LinkContainer to="/kit">
                     <NavItem eventKey={1}>{this.props.messages.kit}</NavItem>
@@ -32,6 +34,7 @@ class CardinalNav extends Component {
                     <NavItem eventKey={5} href="#">{this.props.messages.blog}</NavItem>
                 </LinkContainer>
             </Nav>
+                </Navbar.Collapse>
             </Navbar>
         );
     }

@@ -35,7 +35,7 @@ class Challenges extends Component {
                     <Carousel style={{height:"600px"}}>
 
                         {this.state.serverInfo.messages.challengeList.map(function(challenge, i) {
-                            return ( <Carousel.Item><ChallengeDisplay key={i} challenge={challenge} messages={this.state.messages}/></Carousel.Item>
+                            return ( <Carousel.Item key={i} ><ChallengeDisplay key={i} challenge={challenge} messages={this.state.messages}/></Carousel.Item>
                             )},this)}
 
 

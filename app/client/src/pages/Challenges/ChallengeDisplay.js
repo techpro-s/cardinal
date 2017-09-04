@@ -1,22 +1,39 @@
 import React, {Component} from 'react';
-import {Row,Col,Grid,Thumbnail,Image} from 'react-bootstrap';
-import javaimg from '../../images/kit/java.png';
-import jsimg from '../../images/kit/javascript.png';
-import cshimg from '../../images/kit/c#.png';
+import {Row,Button,Modal,Col,Grid,Thumbnail,Image} from 'react-bootstrap';
 
+import ChallengeInfoForm from './ChallengeInfoForm'
 
+const MyLargeModal = React.createClass({
+    render() {
+        return (
+            <Modal {...this.props} bsSize="large" aria-labelledby="contained-modal-title-lg">
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-lg">Challenge Information Form for {this.props.title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                   <ChallengeInfoForm challenge={this.props.title}/>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={this.props.onHide}>Close</Button>
+                </Modal.Footer>
+            </Modal>
+        );
+    }
+});
 
 class ChallengeDisplay extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
+
         render() {
+            let lgClose = () => this.setState({ lgShow: false });
             return (
 
                         <Grid>
                 <Thumbnail>
-                    <Row md={12}>
+                    <Row>
                         <Col md={4}>
                     <Thumbnail  alt="Challenge Image" src={this.props.challenge.backGroundImg} />
                         </Col>
@@ -31,11 +48,12 @@ class ChallengeDisplay extends Component {
                                 <a href={this.props.challenge.PDFUrl} target="blank">{this.props.messages.announcement}</a>
                             </Row>
                             <Row>
-                                <a className="btn-info btn COverview" href="#" target="blank">{this.props.messages.participate}</a>
+                                <Button bsStyle="primary" className="COverview" onClick={()=>this.setState({ lgShow: true })}>{this.props.messages.participate}</Button>
+                                <MyLargeModal title={this.props.challenge.title} show={this.state.lgShow} onHide={lgClose} />
                             </Row>
                         </Col>
                     </Row>
-                    <Row md={12}>
+                    <Row >
                         <Col md={6} xs={12} lg={6}>
                             <Row className="text-center" style={{paddingTop:"5%"}}>
                                 <h4>{this.props.messages.schools.title}</h4>
